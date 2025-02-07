@@ -1,0 +1,97 @@
+{
+    "header": {
+        "title": "Derafu ORG - Innovation & Communauté"
+    },
+    "hero": {
+        "title": "Derafu ORG",
+        "subtitle": "Innovation & Communauté en Technologie et Éducation"
+    },
+    "navbar": {
+        "projects": "Projets Open Source",
+        "education": "Éducation",
+        "community": "Communauté",
+        "team": "Équipe",
+        "contact": "Contact"
+    },
+    "projects": {
+        "title": "Projets Open Source",
+        "description": "Développement d'outils open source pour simplifier et améliorer le développement logiciel.",
+        "items": {
+            "derafu_chart": {
+                "name": "Derafu Chart",
+                "description": "Une bibliothèque PHP pour générer des graphiques avec GD ou d'autres moteurs de rendu personnalisés.",
+                "link": "Voir sur GitHub"
+            },
+            "derafu_twig": {
+                "name": "Derafu Twig",
+                "description": "Une extension Twig avec des filtres et composants pour le système de templates en PHP.",
+                "link": "Voir sur GitHub"
+            },
+            "derafu_lib": {
+                "name": "Derafu Lib",
+                "description": "Une bibliothèque PHP avec une base et une structure standardisée pour créer d'autres bibliothèques.",
+                "link": "Voir sur GitHub"
+            }
+        }
+    },
+    "education": {
+        "title": "Éducation",
+        "description": "Création d'outils innovants pour rendre l'apprentissage plus accessible et interactif.",
+        "items": {
+            "flobix": {
+                "name": "Flobix",
+                "description": "Un outil éducatif permettant l'apprentissage par des images et des symboles.",
+                "link": "En savoir plus"
+            },
+            "liberalism": {
+                "name": "Responsabilité Civile et Liberté",
+                "description": "Respect des projets de vie individuels basé sur le principe de non-agression.",
+                "link": "En savoir plus"
+            },
+            "finance": {
+                "name": "Finance Personnelle",
+                "description": "Contenu uniquement informatif. Aucune recommandation d'investissement.",
+                "link": "En savoir plus"
+            }
+        }
+    },
+    "community": {
+        "title": "Initiatives Communautaires",
+        "description": "Favoriser des projets qui promeuvent la collaboration, l'inclusion et le partage des connaissances.",
+        "items": {
+            "guarida": {
+                "name": "Guarida",
+                "description": "Un espace et une communauté de jeux dédiée aux jeux de cartes à collectionner et aux jeux de rôle.",
+                "link": "En savoir plus"
+            }
+        }
+    },
+    "team": {
+        "title": "Équipe",
+        "description": "Rencontrez les personnes derrière Derafu ORG, engagées dans l'open source et l'éducation.",
+        "members": {
+            "esteban": {
+                "name": "Esteban De La Fuente",
+                "role": "Développeur Logiciel & Entrepreneur",
+                "bio": "Créateur de Derafu ORG, passionné par le développement logiciel, l'automatisation et les stratégies commerciales. Avec des années d'expérience dans la création de solutions innovantes. Actuellement en cours d'un MBA."
+            },
+            "marcela": {
+                "name": "Marcela Morales",
+                "role": "Éducation & Marketing",
+                "bio": "Passionnée par l'éducation et la gestion d'entreprise, avec une formation en éducation de la petite enfance et un diplôme en marketing. Actuellement en train d'élargir ses compétences en programmation."
+            },
+            "valentina": {
+                "name": "Valentina De La Fuente",
+                "role": "Kinésithérapeute & Future Développeuse Logicielle",
+                "bio": "Kinésithérapeute en transition vers le monde de la technologie. Passionnée par la technologie, le bien-être et la pleine conscience grâce au yoga. Actuellement en train de terminer un bootcamp de programmation."
+            }
+        }
+    },
+    "contact": {
+        "title": "Contact & Collaboration",
+        "description": "Si vous souhaitez contribuer ou collaborer, contactez-nous."
+    },
+    "footer": {
+        "text": "Tous droits réservés."
+    }
+}

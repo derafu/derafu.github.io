@@ -1,0 +1,97 @@
+{
+    "header": {
+        "title": "Derafu ORG - Innovation & Gemeinschaft"
+    },
+    "hero": {
+        "title": "Derafu ORG",
+        "subtitle": "Innovation & Gemeinschaft in Technologie und Bildung"
+    },
+    "navbar": {
+        "projects": "Open-Source-Projekte",
+        "education": "Bildung",
+        "community": "Gemeinschaft",
+        "team": "Team",
+        "contact": "Kontakt"
+    },
+    "projects": {
+        "title": "Open-Source-Projekte",
+        "description": "Entwicklung von Open-Source-Tools zur Vereinfachung und Verbesserung der Softwareentwicklung.",
+        "items": {
+            "derafu_chart": {
+                "name": "Derafu Chart",
+                "description": "Eine PHP-Bibliothek zur Erstellung von Diagrammen mit GD oder anderen benutzerdefinierten Renderern.",
+                "link": "Auf GitHub ansehen"
+            },
+            "derafu_twig": {
+                "name": "Derafu Twig",
+                "description": "Eine Twig-Erweiterung mit Filtern und Komponenten für das Templatesystem in PHP.",
+                "link": "Auf GitHub ansehen"
+            },
+            "derafu_lib": {
+                "name": "Derafu Lib",
+                "description": "Eine PHP-Bibliothek mit einer Basisstruktur und standardisiertem Aufbau zur Erstellung weiterer Bibliotheken.",
+                "link": "Auf GitHub ansehen"
+            }
+        }
+    },
+    "education": {
+        "title": "Bildung",
+        "description": "Entwicklung innovativer Werkzeuge, die das Lernen zugänglicher und interaktiver machen.",
+        "items": {
+            "flobix": {
+                "name": "Flobix",
+                "description": "Ein Bildungswerkzeug, das Lernen durch Bilder und Symbole ermöglicht.",
+                "link": "Mehr erfahren"
+            },
+            "liberalism": {
+                "name": "Zivile Verantwortung und Freiheit",
+                "description": "Respekt für individuelle Lebensprojekte auf Basis des Nicht-Aggressions-Prinzips.",
+                "link": "Mehr erfahren"
+            },
+            "finance": {
+                "name": "Persönliche Finanzen",
+                "description": "Nur informative Inhalte. Keine Anlageempfehlungen.",
+                "link": "Mehr erfahren"
+            }
+        }
+    },
+    "community": {
+        "title": "Gemeinschaftsinitiativen",
+        "description": "Förderung von Projekten, die Zusammenarbeit, Inklusion und gemeinsamen Wissensaustausch unterstützen.",
+        "items": {
+            "guarida": {
+                "name": "Guarida",
+                "description": "Ein Spielraum und eine Gemeinschaft, die sich auf Sammelkartenspiele und Rollenspiele konzentriert.",
+                "link": "Mehr erfahren"
+            }
+        }
+    },
+    "team": {
+        "title": "Team",
+        "description": "Lernen Sie die Menschen hinter Derafu ORG kennen, die sich für Open Source und Bildung engagieren.",
+        "members": {
+            "esteban": {
+                "name": "Esteban De La Fuente",
+                "role": "Softwareentwickler & Unternehmer",
+                "bio": "Gründer von Derafu ORG, begeistert von Softwareentwicklung, Automatisierung und Geschäftsstrategien. Jahrelange Erfahrung in der Entwicklung innovativer Lösungen. Derzeit Abschluss eines MBA."
+            },
+            "marcela": {
+                "name": "Marcela Morales",
+                "role": "Bildung & Marketing",
+                "bio": "Leidenschaftlich für Bildung und Unternehmensmanagement, mit einem Hintergrund in frühkindlicher Bildung und einem Diplom in Marketing. Derzeit erweitert sie ihre Fähigkeiten in der Programmierung."
+            },
+            "valentina": {
+                "name": "Valentina De La Fuente",
+                "role": "Kinesiologin & Zukünftige Softwareentwicklerin",
+                "bio": "Kinesiologin, die den Wechsel in die Tech-Welt vollzieht. Begeistert von Technologie, Wohlbefinden und Achtsamkeit durch Yoga. Derzeit absolviert sie ein Programmier-Bootcamp."
+            }
+        }
+    },
+    "contact": {
+        "title": "Kontakt & Zusammenarbeit",
+        "description": "Wenn Sie interessiert sind, beizutragen oder mit uns zusammenzuarbeiten, kontaktieren Sie uns."
+    },
+    "footer": {
+        "text": "Alle Rechte vorbehalten."
+    }
+}

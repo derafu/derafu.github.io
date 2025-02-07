@@ -1,0 +1,97 @@
+{
+    "header": {
+        "title": "Derafu ORG - Innovaatio & Yhteisö"
+    },
+    "hero": {
+        "title": "Derafu ORG",
+        "subtitle": "Innovaatio & Yhteisö teknologiassa ja koulutuksessa"
+    },
+    "navbar": {
+        "projects": "Avoimen Lähdekoodin Projektit",
+        "education": "Koulutus",
+        "community": "Yhteisö",
+        "team": "Tiimi",
+        "contact": "Yhteystiedot"
+    },
+    "projects": {
+        "title": "Avoimen Lähdekoodin Projektit",
+        "description": "Kehitämme avoimen lähdekoodin työkaluja yksinkertaistamaan ja parantamaan ohjelmistokehitystä.",
+        "items": {
+            "derafu_chart": {
+                "name": "Derafu Chart",
+                "description": "PHP-kirjasto kaavioiden luomiseen GD:llä tai muilla mukautetuilla renderöijillä.",
+                "link": "Katso GitHubissa"
+            },
+            "derafu_twig": {
+                "name": "Derafu Twig",
+                "description": "Twig-laajennus, jossa on suodattimia ja komponentteja PHP:n mallijärjestelmälle.",
+                "link": "Katso GitHubissa"
+            },
+            "derafu_lib": {
+                "name": "Derafu Lib",
+                "description": "PHP-kirjasto, jossa on perusrakenne ja standardoitu malli muiden kirjastojen luomiseen.",
+                "link": "Katso GitHubissa"
+            }
+        }
+    },
+    "education": {
+        "title": "Koulutus",
+        "description": "Luomme innovatiivisia työkaluja, jotka tekevät oppimisesta helpompaa ja vuorovaikutteisempaa.",
+        "items": {
+            "flobix": {
+                "name": "Flobix",
+                "description": "Koulutustyökalu, joka mahdollistaa oppimisen kuvien ja symbolien avulla.",
+                "link": "Lue lisää"
+            },
+            "liberalism": {
+                "name": "Siviilivastuu ja Vapaus",
+                "description": "Yksilöllisten elämänprojektien kunnioittaminen, joka perustuu väkivallattomuuden periaatteisiin.",
+                "link": "Lue lisää"
+            },
+            "finance": {
+                "name": "Henkilökohtainen Talous",
+                "description": "Vain informatiivista sisältöä. Ei sijoitussuosituksia.",
+                "link": "Lue lisää"
+            }
+        }
+    },
+    "community": {
+        "title": "Yhteisöaloitteet",
+        "description": "Tuemme hankkeita, jotka edistävät yhteistyötä, osallisuutta ja jaettua tietoa.",
+        "items": {
+            "guarida": {
+                "name": "Guarida",
+                "description": "Pelitila ja yhteisö, joka keskittyy keräilykorttipeleihin ja roolipeleihin.",
+                "link": "Lue lisää"
+            }
+        }
+    },
+    "team": {
+        "title": "Tiimi",
+        "description": "Tutustu Derafu ORG:n taustalla oleviin ihmisiin, jotka ovat sitoutuneet avoimeen lähdekoodiin ja koulutukseen.",
+        "members": {
+            "esteban": {
+                "name": "Esteban De La Fuente",
+                "role": "Ohjelmistokehittäjä & Yrittäjä",
+                "bio": "Derafu ORG:n perustaja, intohimoinen ohjelmistokehityksen, automaation ja liiketoimintastrategioiden suhteen. Vuosien kokemus innovatiivisten ratkaisujen rakentamisesta. Tällä hetkellä viimeistelemässä MBA-tutkintoa."
+            },
+            "marcela": {
+                "name": "Marcela Morales",
+                "role": "Koulutus & Markkinointi",
+                "bio": "Intohimoinen koulutuksen ja liiketoiminnan hallinnan suhteen, taustalla varhaiskasvatus ja markkinoinnin tutkinto. Laajentaa parhaillaan ohjelmointitaitojaan."
+            },
+            "valentina": {
+                "name": "Valentina De La Fuente",
+                "role": "Fysioterapeutti & Tuleva Ohjelmistokehittäjä",
+                "bio": "Fysioterapeutti, joka siirtyy teknologia-alalle. Intohimoinen teknologian, hyvinvoinnin ja tietoisen läsnäolon suhteen joogan kautta. Tällä hetkellä suorittamassa ohjelmoinnin bootcampia."
+            }
+        }
+    },
+    "contact": {
+        "title": "Yhteystiedot & Yhteistyö",
+        "description": "Jos olet kiinnostunut osallistumisesta tai yhteistyöstä, ota meihin yhteyttä."
+    },
+    "footer": {
+        "text": "Kaikki oikeudet pidätetään."
+    }
+}

@@ -1,0 +1,97 @@
+{
+    "header": {
+        "title": "Derafu ORG - Innovación y Comunidad"
+    },
+    "hero": {
+        "title": "Derafu ORG",
+        "subtitle": "Innovación y Comunidad en Tecnología y Educación"
+    },
+    "navbar": {
+        "projects": "Proyectos de Código Abierto",
+        "education": "Educación",
+        "community": "Comunidad",
+        "team": "Equipo",
+        "contact": "Contacto"
+    },
+    "projects": {
+        "title": "Proyectos de Código Abierto",
+        "description": "Desarrollando herramientas de código abierto para simplificar y mejorar el desarrollo de software.",
+        "items": {
+            "derafu_chart": {
+                "name": "Derafu Chart",
+                "description": "Una biblioteca PHP para generar gráficos con GD u otros renderizadores personalizados.",
+                "link": "Ver en GitHub"
+            },
+            "derafu_twig": {
+                "name": "Derafu Twig",
+                "description": "Una extensión de Twig con filtros y componentes para el sistema de plantillas en PHP.",
+                "link": "Ver en GitHub"
+            },
+            "derafu_lib": {
+                "name": "Derafu Lib",
+                "description": "Una biblioteca PHP con una estructura base y estandarizada para crear otras bibliotecas.",
+                "link": "Ver en GitHub"
+            }
+        }
+    },
+    "education": {
+        "title": "Educación",
+        "description": "Creando herramientas innovadoras que hacen el aprendizaje más accesible e interactivo.",
+        "items": {
+            "flobix": {
+                "name": "Flobix",
+                "description": "Una herramienta educativa que permite el aprendizaje a través de imágenes y símbolos.",
+                "link": "Aprende Más"
+            },
+            "liberalism": {
+                "name": "Responsabilidad Civil y Libertad",
+                "description": "Respeto por los proyectos de vida individuales basado en el principio de no agresión.",
+                "link": "Aprende Más"
+            },
+            "finance": {
+                "name": "Finanzas Personales",
+                "description": "Contenido solo informativo. No se realizan recomendaciones de inversión.",
+                "link": "Aprende Más"
+            }
+        }
+    },
+    "community": {
+        "title": "Iniciativas Comunitarias",
+        "description": "Fomentando proyectos que promueven la colaboración, la inclusión y el conocimiento compartido.",
+        "items": {
+            "guarida": {
+                "name": "Guarida",
+                "description": "Un espacio y comunidad de juegos centrada en juegos de cartas coleccionables y RPGs.",
+                "link": "Aprende Más"
+            }
+        }
+    },
+    "team": {
+        "title": "Equipo",
+        "description": "Conoce a las personas detrás de Derafu ORG, comprometidas con el código abierto y la educación.",
+        "members": {
+            "esteban": {
+                "name": "Esteban De La Fuente",
+                "role": "Desarrollador de Software & Emprendedor",
+                "bio": "Creador de Derafu ORG, apasionado por el desarrollo de software, la automatización y las estrategias de negocio. Con años de experiencia en la creación de soluciones innovadoras. Actualmente cursando un MBA."
+            },
+            "marcela": {
+                "name": "Marcela Morales",
+                "role": "Educación & Marketing",
+                "bio": "Apasionada por la educación y la gestión empresarial, con formación en educación infantil y un diplomado en marketing. Actualmente ampliando sus habilidades en programación."
+            },
+            "valentina": {
+                "name": "Valentina De La Fuente",
+                "role": "Kinesióloga & Futura Desarrolladora de Software",
+                "bio": "Kinesióloga en transición al mundo tecnológico. Apasionada por la tecnología, el bienestar y la conciencia plena a través del yoga. Actualmente completando un bootcamp de programación."
+            }
+        }
+    },
+    "contact": {
+        "title": "Contacto & Colaboración",
+        "description": "Si estás interesado en contribuir o colaborar, contáctanos."
+    },
+    "footer": {
+        "text": "Todos los derechos reservados."
+    }
+}

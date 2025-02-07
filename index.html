@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="header.title">Derafu ORG - Innovation & Community</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .hero {
+            background: #007bff;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .project-card img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body id="top">
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#top" data-i18n="hero.title">Derafu ORG</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#projects" data-i18n="navbar.projects">Open Source Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education" data-i18n="navbar.education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#community" data-i18n="navbar.community">Community</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team" data-i18n="navbar.team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="navbar.contact">Contact</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            🌍
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item lang-selector" href="?lang=en" data-lang="en">English</a></li>
+                            <li><a class="dropdown-item lang-selector" href="?lang=es" data-lang="es">Español</a></li>
+                            <li><a class="dropdown-item lang-selector" href="?lang=it" data-lang="it">Italiano</a></li>
+                            <li><a class="dropdown-item lang-selector" href="?lang=fr" data-lang="fr">Français</a></li>
+                            <li><a class="dropdown-item lang-selector" href="?lang=de" data-lang="de">Deutsch</a></li>
+                            <li><a class="dropdown-item lang-selector" href="?lang=pt" data-lang="pt">Português</a></li>
+                            <li><a class="dropdown-item lang-selector" href="?lang=et" data-lang="et">Eesti</a></li>
+                            <li><a class="dropdown-item lang-selector" href="?lang=fi" data-lang="fi">Suomi</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 data-i18n="hero.title">Derafu ORG</h1>
+            <p data-i18n="hero.subtitle">Innovation & Community in Technology and Education</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-2 text-primary" data-i18n="projects.title">Open Source Projects</h2>
+            <p class="text-center lead mb-4 pb-2 border-bottom" data-i18n="projects.description">
+                Developing open-source tools to simplify and enhance software development.
+            </p>
+            <div class="row">
+                <!-- Derafu Chart -->
+                <div class="col-md-4">
+                    <div class="card project-card">
+                        <img src="img/projects/derafu-chart.png" alt="Derafu Chart Image">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="projects.items.derafu_chart.name">Derafu Chart</h5>
+                            <p class="card-text" data-i18n="projects.items.derafu_chart.description">
+                                A PHP library for generating charts with GD or other custom renderers.
+                            </p>
+                            <a href="https://github.com/derafu/chart" class="btn btn-primary w-100">
+                                <i class="fab fa-github"></i>
+                                <span data-i18n="projects.items.derafu_chart.link">View on GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Derafu Twig -->
+                <div class="col-md-4">
+                    <div class="card project-card">
+                        <img src="img/projects/derafu-twig.png" alt="Derafu Twig Image">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="projects.items.derafu_twig.name">Derafu Twig</h5>
+                            <p class="card-text" data-i18n="projects.items.derafu_twig.description">
+                                A Twig extension with filters and components for the template system in PHP.
+                            </p>
+                            <a href="https://github.com/derafu/twig" class="btn btn-primary w-100">
+                                <i class="fab fa-github"></i>
+                                <span data-i18n="projects.items.derafu_twig.link">View on GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Derafu Lib -->
+                <div class="col-md-4">
+                    <div class="card project-card">
+                        <img src="img/projects/derafu-lib.png" alt="Derafu Lib Image">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="projects.items.derafu_lib.name">Derafu Lib</h5>
+                            <p class="card-text" data-i18n="projects.items.derafu_lib.description">
+                                A PHP library with a base and standardized structure for creating another libraries.
+                            </p>
+                            <a href="https://github.com/derafu/derafu-lib-core" class="btn btn-primary w-100">
+                                <i class="fab fa-github"></i>
+                                <span data-i18n="projects.items.derafu_lib.link">View on GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Education Section -->
+    <section id="education" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-2 text-primary" data-i18n="education.title">Education</h2>
+            <p class="text-center lead mb-4 pb-2 border-bottom" data-i18n="education.description">
+                Creating innovative tools that make learning more accessible and interactive.
+            </p>
+            <div class="row">
+                <!-- Flobix -->
+                <div class="col-md-4">
+                    <div class="card project-card">
+                        <img src="img/education/flobix.png" alt="Flobix Image">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="education.items.flobix.name">Flobix</h5>
+                            <p class="card-text" data-i18n="education.items.flobix.description">
+                                An educational tool that enables learning through images and symbols.
+                            </p>
+                            <a href="https://www.flobix.org" class="btn btn-primary w-100">
+                                <i class="fas fa-info-circle"></i>
+                                <span data-i18n="education.items.flobix.link">Learn More</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Civil Responsibility and Freedom -->
+                <div class="col-md-4">
+                    <div class="card project-card">
+                        <img src="img/education/liberalism.png" alt="Civil Responsibility and Freedom Image">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="education.items.liberalism.name">Civil Responsibility and Freedom</h5>
+                            <p class="card-text" data-i18n="education.items.liberalism.description">
+                                Respect for individual life projects based on non-aggression principles.
+                            </p>
+                            <a href="liberalism" class="btn btn-primary w-100 disabled">
+                                <i class="fas fa-info-circle"></i>
+                                <span data-i18n="education.items.liberalism.link">Learn More</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Personal Finance -->
+                <div class="col-md-4">
+                    <div class="card project-card">
+                        <img src="img/education/finance.png" alt="Personal Finance Image">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="education.items.finance.name">Personal Finance</h5>
+                            <p class="card-text" data-i18n="education.items.finance.description">
+                                Only informative content. No investment recommendations.
+                            </p>
+                            <a href="finance" class="btn btn-primary w-100 disabled">
+                                <i class="fas fa-info-circle"></i>
+                                <span data-i18n="education.items.finance.link">Learn More</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Community Section -->
+    <section id="community" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-2 text-primary" data-i18n="community.title">Community Initiatives</h2>
+            <p class="text-center lead mb-4 pb-2 border-bottom" data-i18n="community.description">
+                Fostering projects that promote collaboration, inclusion, and shared knowledge.
+            </p>
+            <div class="row">
+                <!-- Guarida -->
+                <div class="col-md-4 offset-md-4">
+                    <div class="card project-card">
+                        <img src="img/community/guarida.png" alt="Guarida Image">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="community.items.guarida.name">Guarida</h5>
+                            <p class="card-text" data-i18n="community.items.guarida.description">
+                                A gaming space and community focused on collectible card games and RPGs.
+                            </p>
+                            <a href="https://www.guarida.cl" class="btn btn-primary w-100">
+                                <i class="fas fa-info-circle"></i>
+                                <span data-i18n="community.items.guarida.link">Learn More</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Team Section -->
+    <section id="team" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-2 text-primary" data-i18n="team.title">Team</h2>
+            <p class="text-center lead mb-4 pb-2 border-bottom" data-i18n="team.description">
+                Meet the people behind <strong>Derafu ORG</strong>, committed to open-source and educational initiatives.
+            </p>
+
+            <div class="row justify-content-center">
+                <!-- Esteban -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card border-0 shadow-sm">
+                        <img src="img/team/esteban.png" class="card-img-top" alt="Esteban De La Fuente">
+                        <div class="card-body text-center">
+                            <h5 class="card-title" data-i18n="team.members.esteban.name">Esteban De La Fuente</h5>
+                            <p class="text-muted" data-i18n="team.members.esteban.role">Software Developer &amp; Entrepreneur</p>
+                            <p class="card-text" data-i18n="team.members.esteban.bio">
+                                Creator of Derafu ORG, passionate about software development, automation, and business strategies. With years of experience in building innovative solutions. Currently completing an MBA.
+                            </p>
+                            <a href="https://www.linkedin.com/in/estebandelaf" class="btn btn-outline-primary btn-sm" target="_blank">
+                                <i class="fa-brands fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marcela -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card border-0 shadow-sm">
+                        <img src="img/team/marcela.png" class="card-img-top" alt="Marcela Morales">
+                        <div class="card-body text-center">
+                            <h5 class="card-title" data-i18n="team.members.marcela.name">Marcela Morales</h5>
+                            <p class="text-muted" data-i18n="team.members.marcela.role">Education & Marketing</p>
+                            <p class="card-text" data-i18n="team.members.marcela.bio">
+                                Passionate about education and business management, with a background in early childhood education and a diploma in marketing. Currently expanding her skills in programming.
+                            </p>
+                            <a href="https://www.linkedin.com/in/marcela-morales-peralta-26054a88" class="btn btn-outline-primary btn-sm" target="_blank">
+                                <i class="fa-brands fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Valentina -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card border-0 shadow-sm">
+                        <img src="img/team/valentina.png" class="card-img-top" alt="Valentina De La Fuente">
+                        <div class="card-body text-center">
+                            <h5 class="card-title" data-i18n="team.members.valentina.name">Valentina De La Fuente</h5>
+                            <p class="text-muted" data-i18n="team.members.valentina.role">Kinesiologist & Future Software Developer</p>
+                            <p class="card-text" data-i18n="team.members.valentina.bio">
+                                Kinesiologist transitioning into the tech world. Passionate about technology, well-being, and mindfulness through yoga. Currently completing a programming bootcamp.
+                            </p>
+                            <a href="" class="btn btn-outline-primary btn-sm disabled" target="_blank">
+                                <i class="fa-brands fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- End Row -->
+        </div> <!-- End Container -->
+    </section>
+
+    <hr>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-2 text-primary" data-i18n="contact.title">Contact & Collaboration</h2>
+            <p class="text-center lead mb-4 pb-2 border-bottom" data-i18n="contact.description">
+                If you're interested in contributing or collaborating, reach out to us.
+            </p>
+            <div class="d-flex justify-content-center gap-4 text-center">
+                <div>
+                    <a href="#" id="email-link">
+                        <i class="fa-solid fa-envelope fa-5x"></i>
+                        <span class="d-block mt-2" id="email-span">derafu@derafu.org</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://github.com/derafu" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" target="_blank">
+                        <i class="fa-brands fa-github fa-5x"></i>
+                        <span class="d-block mt-2">@derafu</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.derafu.com" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" target="_blank">
+                        <i class="fa-solid fa-globe fa-5x"></i>
+                        <span class="d-block mt-2">www.derafu.com</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="text-center mt-3">
+            <p>
+                <a href="?lang=en" class="lang-selector" data-lang="en">English</a> |
+                <a href="?lang=es" class="lang-selector" data-lang="es">Español</a> |
+                <a href="?lang=it" class="lang-selector" data-lang="it">Italiano</a> |
+                <a href="?lang=fr" class="lang-selector" data-lang="fr">Français</a> |
+                <a href="?lang=de" class="lang-selector" data-lang="de">Deutsch</a> |
+                <a href="?lang=pt" class="lang-selector" data-lang="pt">Português</a> |
+                <a href="?lang=et" class="lang-selector" data-lang="et">Eesti</a> |
+                <a href="?lang=fi" class="lang-selector" data-lang="fi">Suomi</a>
+            </p>
+        </div>
+        <p>&copy; 2025 <span data-i18n="hero.title">Derafu ORG</span> | <span data-i18n="footer.text">All rights reserved.</span></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

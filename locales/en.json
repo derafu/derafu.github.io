@@ -1,0 +1,97 @@
+{
+    "header": {
+        "title": "Derafu ORG - Innovation & Community"
+    },
+    "hero": {
+        "title": "Derafu ORG",
+        "subtitle": "Innovation & Community in Technology and Education"
+    },
+    "navbar": {
+        "projects": "Open Source Projects",
+        "education": "Education",
+        "community": "Community",
+        "team": "Team",
+        "contact": "Contact"
+    },
+    "projects": {
+        "title": "Open Source Projects",
+        "description": "Developing open-source tools to simplify and enhance software development.",
+        "items": {
+            "derafu_chart": {
+                "name": "Derafu Chart",
+                "description": "A PHP library for generating charts with GD or other custom renderers.",
+                "link": "View on GitHub"
+            },
+            "derafu_twig": {
+                "name": "Derafu Twig",
+                "description": "A Twig extension with filters and components for the template system in PHP.",
+                "link": "View on GitHub"
+            },
+            "derafu_lib": {
+                "name": "Derafu Lib",
+                "description": "A PHP library with a base and standardized structure for creating another libraries.",
+                "link": "View on GitHub"
+            }
+        }
+    },
+    "education": {
+        "title": "Education",
+        "description": "Creating innovative tools that make learning more accessible and interactive.",
+        "items": {
+            "flobix": {
+                "name": "Flobix",
+                "description": "An educational tool that enables learning through images and symbols.",
+                "link": "Learn More"
+            },
+            "liberalism": {
+                "name": "Civil Responsibility and Freedom",
+                "description": "Respect for individual life projects based on non-aggression principles.",
+                "link": "Learn More"
+            },
+            "finance": {
+                "name": "Personal Finance",
+                "description": "Only informative content. No investment recommendations.",
+                "link": "Learn More"
+            }
+        }
+    },
+    "community": {
+        "title": "Community Initiatives",
+        "description": "Fostering projects that promote collaboration, inclusion, and shared knowledge.",
+        "items": {
+            "guarida": {
+                "name": "Guarida",
+                "description": "A gaming space and community focused on collectible card games and RPGs.",
+                "link": "Learn More"
+            }
+        }
+    },
+    "team": {
+        "title": "Team",
+        "description": "Meet the people behind Derafu ORG, committed to open-source and educational initiatives.",
+        "members": {
+            "esteban": {
+                "name": "Esteban De La Fuente",
+                "role": "Software Developer & Entrepreneur",
+                "bio": "Creator of Derafu ORG, passionate about software development, automation, and business strategies. With years of experience in building innovative solutions. Currently completing an MBA."
+            },
+            "marcela": {
+                "name": "Marcela Morales",
+                "role": "Education & Marketing",
+                "bio": "Passionate about education and business management, with a background in early childhood education and a diploma in marketing. Currently expanding her skills in programming."
+            },
+            "valentina": {
+                "name": "Valentina De La Fuente",
+                "role": "Kinesiologist & Future Software Developer",
+                "bio": "Kinesiologist transitioning into the tech world. Passionate about technology, well-being, and mindfulness through yoga. Currently completing a programming bootcamp."
+            }
+        }
+    },
+    "contact": {
+        "title": "Contact & Collaboration",
+        "description": "If you're interested in contributing or collaborating, reach out to us."
+    },
+    "footer": {
+        "text": "All rights reserved."
+    }
+}

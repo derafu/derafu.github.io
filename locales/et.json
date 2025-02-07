@@ -1,0 +1,97 @@
+{
+    "header": {
+        "title": "Derafu ORG - Innovatsioon & Kogukond"
+    },
+    "hero": {
+        "title": "Derafu ORG",
+        "subtitle": "Innovatsioon & Kogukond tehnoloogia ja hariduse vallas"
+    },
+    "navbar": {
+        "projects": "Avatud Lähtekoodiga Projektid",
+        "education": "Haridus",
+        "community": "Kogukond",
+        "team": "Meeskond",
+        "contact": "Kontakt"
+    },
+    "projects": {
+        "title": "Avatud Lähtekoodiga Projektid",
+        "description": "Arendame avatud lähtekoodiga tööriistu, et lihtsustada ja täiustada tarkvaraarendust.",
+        "items": {
+            "derafu_chart": {
+                "name": "Derafu Chart",
+                "description": "PHP-teek diagrammide genereerimiseks GD või teiste kohandatud renderdajatega.",
+                "link": "Vaata GitHubis"
+            },
+            "derafu_twig": {
+                "name": "Derafu Twig",
+                "description": "Twig laiendus koos filtrite ja komponentidega PHP mallisüsteemi jaoks.",
+                "link": "Vaata GitHubis"
+            },
+            "derafu_lib": {
+                "name": "Derafu Lib",
+                "description": "PHP-teek baasi ja standardiseeritud struktuuriga, et luua muid teeke.",
+                "link": "Vaata GitHubis"
+            }
+        }
+    },
+    "education": {
+        "title": "Haridus",
+        "description": "Loome uuenduslikke tööriistu, mis muudavad õppimise kättesaadavamaks ja interaktiivsemaks.",
+        "items": {
+            "flobix": {
+                "name": "Flobix",
+                "description": "Õppevahend, mis võimaldab õppimist piltide ja sümbolite abil.",
+                "link": "Loe Lähemalt"
+            },
+            "liberalism": {
+                "name": "Kodaniku Vastutus ja Vabadus",
+                "description": "Individuaalsete eluprojektide austamine, mis põhineb mitteagressiooni põhimõtetel.",
+                "link": "Loe Lähemalt"
+            },
+            "finance": {
+                "name": "Isiklik Finantsjuhtimine",
+                "description": "Ainult informatiivne sisu. Ei anna investeerimissoovitusi.",
+                "link": "Loe Lähemalt"
+            }
+        }
+    },
+    "community": {
+        "title": "Kogukonna Algatused",
+        "description": "Toetame projekte, mis edendavad koostööd, kaasatust ja jagatud teadmisi.",
+        "items": {
+            "guarida": {
+                "name": "Guarida",
+                "description": "Mänguruum ja kogukond, mis keskendub kaardimängudele ja rollimängudele.",
+                "link": "Loe Lähemalt"
+            }
+        }
+    },
+    "team": {
+        "title": "Meeskond",
+        "description": "Tutvu inimestega, kes on Derafu ORG taga, pühendunud avatud lähtekoodile ja haridusele.",
+        "members": {
+            "esteban": {
+                "name": "Esteban De La Fuente",
+                "role": "Tarkvaraarendaja & Ettevõtja",
+                "bio": "Derafu ORG looja, kirglik tarkvaraarenduse, automatiseerimise ja äristrateegiate vastu. Aastatepikkune kogemus innovaatiliste lahenduste loomisel. Praegu lõpetamas MBA-d."
+            },
+            "marcela": {
+                "name": "Marcela Morales",
+                "role": "Haridus & Turundus",
+                "bio": "Kirglik hariduse ja ärijuhtimise vastu, varasem kogemus alushariduses ja turunduse diplom. Praegu laiendab programmeerimisoskusi."
+            },
+            "valentina": {
+                "name": "Valentina De La Fuente",
+                "role": "Füsioterapeut & Tulevane Tarkvaraarendaja",
+                "bio": "Füsioterapeut, kes teeb üleminekut tehnoloogiamaailma. Kirglik tehnoloogia, heaolu ja teadveloleku vastu jooga kaudu. Praegu lõpetamas programmeerimise bootcamp'i."
+            }
+        }
+    },
+    "contact": {
+        "title": "Kontakt & Koostöö",
+        "description": "Kui oled huvitatud panustamisest või koostööst, võta meiega ühendust."
+    },
+    "footer": {
+        "text": "Kõik õigused kaitstud."
+    }
+}
