@@ -1,0 +1,59 @@
+{
+    "name": "derafu/org",
+    "description": "Derafu: Derafu ORG Page",
+    "type": "project",
+    "homepage": "https://derafu.org",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Esteban De La Fuente Rubio / Derafu",
+            "homepage": "https://www.derafu.org"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/derafu/derafu.github.io/issues",
+        "source": "https://github.com/derafu/derafu.github.io"
+    },
+    "autoload": {
+        "psr-4": {
+            "Derafu\\Org\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Derafu\\TestsOrg\\": "tests/src/"
+        }
+    },
+    "require": {
+        "php": "^8.3",
+        "derafu/foundation": "dev-main"
+    },
+    "require-dev": {
+        "ext-xdebug": "*",
+        "friendsofphp/php-cs-fixer": "^3.63",
+        "phpstan/phpstan": "^1.12",
+        "phpunit/phpunit": "^11.4"
+    },
+    "scripts": {
+        "docs": "php tools/phpdocumentor run --config=phpdoc.xml",
+        "tests": "XDEBUG_MODE=coverage vendor/bin/phpunit --configuration=phpunit.xml",
+        "phpcs-fix": "vendor/bin/php-cs-fixer fix -v --config=php-cs-fixer.php",
+        "phpcs-fix-dry-run": "vendor/bin/php-cs-fixer fix -v --dry-run --diff --config=php-cs-fixer.php",
+        "phpstan": "vendor/bin/phpstan analyse --configuration=phpstan.neon --memory-limit=1G",
+        "phpstan-export": "vendor/bin/phpstan analyse --configuration=phpstan.neon --level 9 --generate-baseline",
+        "build": "npm run build",
+        "post-install-cmd": [
+            "Derafu\\Foundation\\Installer::copyFiles"
+        ],
+        "post-update-cmd": [
+            "Derafu\\Foundation\\Installer::copyFiles"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}
