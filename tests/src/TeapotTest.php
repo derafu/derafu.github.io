@@ -10,16 +10,16 @@ declare(strict_types=1);
  * See LICENSE file for more details.
  */
 
-namespace Derafu\TestsProject;
+namespace Derafu\TestsOrg;
 
-use Derafu\Project\Teapot;
+use Derafu\Org\Teapot;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
 #[CoversClass(Teapot::class)]
 class TeapotTest extends TestCase
 {
-    public function testDummyAssertTrue(): void
+    public function testImATeapot(): void
     {
         $this->assertSame("I'm a teapot", (string)(new Teapot()));
     }
