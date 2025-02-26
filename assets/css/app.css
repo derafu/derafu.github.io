@@ -21,7 +21,3 @@
     --footer-bottom-bg: #111111;         /* Footer bottom ligeramente más claro que el fondo */
     --footer-bottom-text: #6c757d;       /* Texto gris (text-muted de Bootstrap) */
 }
-
-section {
-    scroll-margin-top: 5rem;
-}
