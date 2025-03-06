@@ -47,10 +47,10 @@ jobs:
         run: npm run build
 
       - name: Enable error logging
-        run: echo 'error_log = /tmp/php_errors.log' >> ~/.phpenv/versions/$(php -r "echo PHP_MAJOR_VERSION.'.'.PHP_MINOR_VERSION;")/etc/php.ini
+        run: echo 'export PHP_INI_SCAN_DIR=/etc/php/cli/conf.d && echo "error_log = /tmp/php_errors.log" > /etc/php/cli/conf.d/99-error-log.ini' >> $GITHUB_ENV
 
       - name: Start PHP server
-        run: php -d display_errors=1 -d error_reporting=E_ALL -S 127.0.0.1:9000 public/index.php &
+        run: php -d display_errors=1 -d log_errors=1 -d error_reporting=E_ALL -S 127.0.0.1:9000 public/index.php &
 
       - name: Download static HTML with wget
         run: |
