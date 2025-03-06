@@ -2,13 +2,20 @@
 
 {% block main %}
 
-<twig:block-title
-    title="Documentación"
-/>
+<section>
+    <twig:block-hero
+        size="mini"
+        title="Documentation"
+        subtitle="Documentation for our projects."
+    />
+</section>
 
-<twig:block-alert
-    type="info"
-    content="La documentación unificada de nuestros proyectos está en construcción. Por favor, revisa la documentación de cada proyecto para ir viendo el progreso."
-/>
+<section class="my-5">
+    <twig:block-alert
+        container="container"
+        type="info"
+        content="The unified documentation of our projects is under construction. Please check the documentation of each project to see the progress."
+    />
+</section>
 
 {% endblock %}

@@ -2,114 +2,132 @@
 
 {% block main %}
 
-<twig:block-hero
-    background="{{ base_path }}/img/free-software/free-software-hero.webp"
-    contentBackground="true"
-    title="Free Software / Software Libre"
-    subtitle="Free software is a matter of liberty, not price. Think of free as in free speech, not as in free beer."
-    :buttons="[
-        {
-            text: 'Free Software Foundation',
-            url: 'https://www.fsf.org',
-            target: '_blank'
-        }
-    ]"
-    align="left"
-    theme="amber-elegance"
-/>
+<section>
+    <twig:block-hero
+        background="{{ base_path }}/img/free-software/free-software-hero.webp"
+        contentBackground="true"
+        title="Free Software / Software Libre"
+        subtitle="Free software is a matter of liberty, not price. Think of free as in free speech, not as in free beer."
+        :buttons="[
+            {
+                text: 'Free Software Foundation',
+                url: 'https://www.fsf.org',
+                target: '_blank'
+            }
+        ]"
+        align="left"
+    />
+</section>
 
-<twig:block-title
-    title="Las 4 libertades del software libre"
-    subtitle="El software libre es un software que otorga a los usuarios cuatro derechos fundamentales."
-/>
+<section>
+    <twig:block-title
+        container="container"
+        title="The four freedoms of free software"
+        subtitle="Free software is a matter of liberty, not price. Think of free as in free speech, not as in free beer."
+    />
 
-<twig:block-features-icon
-    :features="[
-        {
-            icon: 'fas fa-user',
-            title: 'Ejecutar',
-            description: 'El usuario tiene la libertad de ejecutar el programa como lo desee, con cualquier propósito (para uso personal, educativo, comercial, etc.).'
-        },
-        {
-            icon: 'fas fa-user',
-            title: 'Estudiar',
-            description: 'El usuario tiene la libertad de estudiar el programa y adaptarlo a sus necesidades.'
-        },
-        {
-            icon: 'fas fa-user',
-            title: 'Distribuir',
-            description: 'El usuario tiene la libertad de distribuir copias del programa, ya sea en forma gratuita o a cambio de un precio.'
-        },
-        {
-            icon: 'fas fa-user',
-            title: 'Mejorar',
-            description: 'El usuario tiene la libertad de mejorar el programa y distribuir las mejoras a terceros.'
-        }
-    ]"
-/>
+    <twig:block-features-icon
+        container="container"
+        :features="[
+            {
+                icon: 'fa-solid fa-play',
+                title: 'Run',
+                description: 'The user has the freedom to run the program as they wish, for any purpose (personal, educational, commercial, etc.).'
+            },
+            {
+                icon: 'fa-solid fa-magnifying-glass',
+                title: 'Study',
+                description: 'The user has the freedom to study the program and adapt it to their needs.'
+            },
+            {
+                icon: 'fa-solid fa-share',
+                title: 'Distribute',
+                description: 'The user has the freedom to distribute copies of the program, either gratis or in exchange for a price.'
+            },
+            {
+                icon: 'fa-solid fa-pen-to-square',
+                title: 'Improve',
+                description: 'The user has the freedom to improve the program and distribute the improvements to others.'
+            }
+        ]"
+    />
+</section>
 
-<twig:block-title
-    title="Licencias de Software Libre"
-    subtitle="Existen muchas licencias de software, cada una con sus propias características y beneficios."
-/>
+<section>
+    <twig:block-title
+        container="container"
+        title="Free software licenses"
+        subtitle="There are many free software licenses, each with their own characteristics and benefits."
+    />
 
-<twig:block-card-grid
-    :cards="[
-        {
-            title: 'Licencia AGPL',
-            description: 'Permite el uso, modificación y distribución del software, siempre que se incluya el código fuente original. Esta licencia incluye al software que se ejecuta en servidores.'
-        },
-        {
-            title: 'Licencia GPL',
-            description: 'Permite el uso, modificación y distribución del software, siempre que se incluya el código fuente original.'
-        },
-        {
-            title: 'Licencia LGPL',
-            description: 'Permite el uso, modificación y distribución del software, siempre que se incluya el código fuente original.'
-        },
-        {
-            title: 'Licencia MIT',
-            description: 'Permite el uso, modificación y distribución del software sin restricciones, siempre que se incluya el aviso de copyright original.'
-        },
-    ]"
-    :cols="2"
-/>
+    <twig:block-card-grid
+        container="container"
+        :cards="[
+            {
+                title: 'AGPL License',
+                description: 'Allows the use, modification and distribution of the software, as long as the original source code is included. This license includes software that runs on servers.'
+            },
+            {
+                title: 'GPL License',
+                description: 'Allows the use, modification and distribution of the software, as long as the original source code is included.'
+            },
+            {
+                title: 'LGPL License',
+                description: 'Allows the use, modification and distribution of the software, as long as the original source code is included.'
+            },
+            {
+                title: 'MIT License',
+                description: 'Allows the use, modification and distribution of the software without restrictions, as long as the original copyright notice is included.'
+            },
+        ]"
+        :cols="2"
+    />
+</section>
 
-<twig:block-cta
-    title="¿Quieres saber más sobre software libre?"
-    description="¡Revisa la información en el sitio de la Free Software Foundation!"
-    button_text="¿Qué es el Software Libre?"
-    button_url="https://www.gnu.org/philosophy/free-sw.es.html"
-/>
+<section>
+    <twig:block-cta
+        title="Want to know more about free software?"
+        description="¡Check out the information on the Free Software Foundation website!"
+        button_text="What is Free Software?"
+        button_url="https://www.gnu.org/philosophy/free-sw.es.html"
+    />
+</section>
 
-<twig:block-title
-    title="Proyectos de Software Libre"
-    subtitle="Participamos en diferentes proyectos de software libre."
-/>
+<section>
 
-<twig:block-card-grid
-    :cards="[
-        {
-            title: 'Derafu ORG',
-            description: 'Colección de software libre para la creación de bibliotecas y aplicaciones web.',
-            button_text: 'Ver en GitHub',
-            button_url: 'https://github.com/derafu',
-        },
-        {
-            title: 'LibreDTE',
-            description: 'LibreDTE es un software libre para la generación de documentos tributarios electrónicos (DTE) en Chile.',
-            button_text: 'Ver en GitHub',
-            button_url: 'https://github.com/libredte',
-        }
-    ]"
-    :cols="2"
-/>
+    <twig:block-title
+        container="container"
+        title="Free software projects"
+        subtitle="We participate in different free software projects."
+    />
 
-<twig:block-quote
-    quote="Decidí migrar varios proyectos a la licencia MIT, que es más permisiva que la AGPL, para que mi software se pueda usar en más proyectos. Mi objetivo es que el software libre sea accesible para todos."
-    author="Esteban De La Fuente Rubio"
-    source="Derafu ORG"
-    image="/img/home/team/esteban.png"
-/>
+    <twig:block-card-grid
+        container="container"
+        :cards="[
+            {
+                title: 'Derafu ORG',
+                description: 'Collection of free software for the creation of libraries and web applications.',
+                button_text: 'See on GitHub',
+                button_url: 'https://github.com/derafu',
+            },
+            {
+                title: 'LibreDTE',
+                description: 'LibreDTE is a free software for the generation of electronic tax documents (DTE) in Chile.',
+                button_text: 'See on GitHub',
+                button_url: 'https://github.com/libredte',
+            }
+        ]"
+        :cols="2"
+    />
+</section>
 
+<section>
+    <twig:block-quote
+        container="container"
+        quote="I decided to migrate several projects to the MIT license, which is more permissive than the AGPL, so that my software can be used in more projects. My goal is that the software I create is accessible to more projects and people."
+        author="Esteban De La Fuente Rubio"
+        source="Derafu ORG"
+        image="/img/home/team/esteban.png"
+    />
+</section>
 {% endblock %}

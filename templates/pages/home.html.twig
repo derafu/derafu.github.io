@@ -7,73 +7,117 @@
     <twig:block-hero
         size="mini"
         title="Derafu ORG"
-        subtitle="Innovación y Comunidad en Tecnología y Educación"
+        subtitle="Innovation & Community in Technology and Education"
     />
 </section>
 
 <section id="software">
     <twig:block-title
-        title="Proyectos de Código Abierto"
-        subtitle="Desarrollando herramientas de código abierto para simplificar y mejorar el desarrollo de software."
+        container="container"
+        title="Some Free Software Projects"
+        subtitle="Developing open source tools to simplify and improve software development."
     />
 
     <twig:block-card-grid
+        container="container"
         :cards="[
             {
-                image: '/img/home/software/derafu-twig.png',
-                title: 'Componentes UX para Twig',
-                description: 'Extensión de Twig con filtros y aproximadamente 40 componentes para el sistema de plantillas en PHP.',
-                button_text: 'Ver Proyecto',
+                image: '/img/home/software/derafu-foundation.webp',
+                title: 'Derafu Foundation',
+                description: 'A standardized base for creating consistent PHP projects.',
+                button_text: 'See Project',
+                button_url: 'https://derafu.org/foundation'
+            },
+            {
+                image: '/img/home/software/derafu-twig.webp',
+                title: 'UX Components for Twig',
+                description: 'Twig extension with filters and approximately 40 components for the PHP template system.',
+                button_text: 'See Project',
                 button_url: 'https://derafu.org/twig'
             },
             {
-                image: '/img/home/software/derafu-data-processor.png',
-                title: 'Procesamiento de Datos',
-                description: 'Procesamiento datos a través de cuatro fases: casteo, transformación, sanitización y validación.',
-                button_text: 'Ver Proyecto',
+                image: '/img/home/software/derafu-form.webp',
+                title: 'Forms',
+                description: 'Declarative, schema-based approach to form definition and rendering.',
+                button_text: 'See Project',
+                button_url: 'https://derafu.org/form'
+            },
+            {
+                image: '/img/home/software/derafu-chart.webp',
+                title: 'Graphics with GD',
+                description: 'PHP library to generate charts with GD or other custom renderers.',
+                button_text: 'See Project',
+                button_url: 'https://derafu.org/chart'
+            },
+            {
+                image: '/img/home/software/derafu-query.webp',
+                title: 'SQL Query Operators',
+                description: 'Query builder that uses path expressions and configurable operators to simplify complex database queries.',
+                button_text: 'See Project',
+                button_url: 'https://derafu.org/query'
+            },
+            {
+                image: '/img/home/software/derafu-data-processor.webp',
+                title: 'Data Processing',
+                description: 'Data processing through four phases: casting, transformation, sanitization and validation.',
+                button_text: 'See Project',
                 button_url: 'https://derafu.org/data-processor'
             },
             {
-                image: '/img/home/software/derafu-chart.png',
-                title: 'Gráficos con GD',
-                description: 'Una biblioteca PHP para generar gráficos con GD u otros renderizadores personalizados.',
-                button_text: 'Ver Proyecto',
-                button_url: 'https://derafu.org/chart'
+                image: '/img/home/software/derafu-selector.webp',
+                title: 'Array Selection and Filtering',
+                description: 'Querying, extracting, and modifying complex data structures using a declarative selector syntax.',
+                button_text: 'See Project',
+                button_url: 'https://derafu.org/selector'
+            },
+            {
+                image: '/img/home/software/derafu-xml.webp',
+                title: 'XML Encoding and Validation',
+                description: 'XML manipulation, providing robust tools for encoding, decoding, validating, and querying XML documents.',
+                button_text: 'See Project',
+                button_url: 'https://derafu.org/xml'
             }
         ]"
-        :cols="3"
+        :cols="4"
+    />
+
+    <twig:block-cta
+        title="Want to see more free software projects?"
+        description="Check out the complete list of projects on the upper menu."
+        button_text="See All Projects"
+        button_url="javascript:document.querySelector('.nav-item.dropdown.mega-menu-wrapper .dropdown-toggle').click();"
     />
 </section>
 
-<hr/>
-
 <section id="education">
     <twig:block-title
-        title="Educación"
-        subtitle="Creando herramientas innovadoras que hacen el aprendizaje más accesible e interactivo."
+        container="container"
+        title="Education"
+        subtitle="Creating innovative tools that make learning more accessible and interactive."
     />
 
     <twig:block-card-grid
+        container="container"
         :cards="[
             {
                 image: '/img/home/education/flobix.png',
                 title: 'Flobix',
-                description: 'Una herramienta educativa que permite el aprendizaje a través de imágenes y símbolos.',
-                button_text: 'Aprende Más',
+                description: 'An educational tool that allows learning through images and symbols.',
+                button_text: 'Learn More',
                 button_url: 'https://www.flobix.org'
             },
             {
                 image: '/img/home/education/liberalism.png',
-                title: 'Responsabilidad Civil y Libertad',
-                description: 'Respeto por los proyectos de vida individuales basado en el principio de no agresión.',
-                button_text: 'Aprende Más',
+                title: 'Responsibility and Freedom',
+                description: 'Respect for individual life projects based on the principle of non-aggression.',
+                button_text: 'Learn More',
                 button_url: ''
             },
             {
                 image: '/img/home/education/finance.png',
-                title: 'Finanzas Personales',
-                description: 'Contenido solo informativo. No se realizan recomendaciones de inversión.',
-                button_text: 'Aprende Más',
+                title: 'Personal Finance',
+                description: 'Only informative content. No investment recommendations.',
+                button_text: 'Learn More',
                 button_url: ''
             }
         ]"
@@ -85,17 +129,19 @@
 
 <section id="community">
     <twig:block-title
-        title="Iniciativas Comunitarias"
-        subtitle="Fomentando proyectos que promueven la colaboración, la inclusión y el conocimiento compartido."
+        container="container"
+        title="Community Initiatives"
+        subtitle="Promoting projects that promote collaboration, inclusion and shared knowledge."
     />
 
     <twig:block-card-grid
+        container="container"
         :cards="[
             {
                 image: '/img/home/community/guarida.png',
                 title: 'Guarida',
-                description: 'Un espacio y comunidad de juegos centrada en juegos de cartas coleccionables y RPGs.',
-                button_text: 'Aprende Más',
+                description: 'A space and community of games focused on collectible card games and RPGs.',
+                button_text: 'Learn More',
                 button_url: 'https://www.guarida.cl',
                 offset: 4
             }
@@ -108,17 +154,19 @@
 
 <section id="team">
     <twig:block-title
-        title="Equipo"
-        subtitle="Conoce a las personas detrás de Derafu ORG, comprometidas con el código abierto y la educación."
+        container="container"
+        title="Team"
+        subtitle="Meet the people behind Derafu ORG, committed to open source and education."
     />
 
     <twig:block-team
+        container="container"
         :members="[
             {
                 name: 'Esteban',
-                role: 'Desarrollador de Software & Emprendedor',
+                role: 'Software Developer & Entrepreneur',
                 image: '/img/home/team/esteban.png',
-                bio: 'Apasionado por el desarrollo de software, la automatización y las estrategias de negocio. Con años de experiencia en la creación de soluciones innovadoras. Actualmente cursando un MBA.',
+                bio: 'Passionate about software development, automation and business strategies. With years of experience in creating innovative solutions. Currently pursuing an MBA.',
                 links: [
                     {
                         icon: 'fa-brands fa-linkedin',
@@ -134,9 +182,9 @@
             },
             {
                 name: 'Marcela',
-                role: 'Educación & Marketing',
+                role: 'Education & Marketing',
                 image: '/img/home/team/marcela.png',
-                bio: 'Apasionada por la educación y la gestión empresarial, con formación en educación infantil y un diplomado en marketing. Actualmente ampliando sus habilidades en programación.',
+                bio: 'Passionate about education and business management, with training in early childhood education and a diploma in marketing. Currently expanding her skills in programming.',
                 links: [
                     {
                         icon: 'fa-brands fa-linkedin',
@@ -147,9 +195,9 @@
             },
             {
                 name: 'Valentina',
-                role: 'Kinesióloga & Futura Desarrolladora de Software',
+                role: 'Kinesiologist & Future Software Developer',
                 image: '/img/home/team/valentina.png',
-                bio: 'Kinesióloga en transición al mundo tecnológico. Apasionada por la tecnología, el bienestar y la conciencia plena a través del yoga. Actualmente completando un bootcamp de programación.',
+                bio: 'Kinesiologist in transition to the technological world. Passionate about technology, well-being and full consciousness through yoga. Currently completing a programming bootcamp.',
                 links: [
                     {
                         icon: 'fa-brands fa-linkedin',
