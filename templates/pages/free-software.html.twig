@@ -1,0 +1,115 @@
+{% extends 'layouts/default.html.twig' %}
+
+{% block main %}
+
+<twig:block-hero
+    background="{{ base_path }}/img/free-software/free-software-hero.webp"
+    contentBackground="true"
+    title="Free Software / Software Libre"
+    subtitle="Free software is a matter of liberty, not price. Think of free as in free speech, not as in free beer."
+    :buttons="[
+        {
+            text: 'Free Software Foundation',
+            url: 'https://www.fsf.org',
+            target: '_blank'
+        }
+    ]"
+    align="left"
+    theme="amber-elegance"
+/>
+
+<twig:block-title
+    title="Las 4 libertades del software libre"
+    subtitle="El software libre es un software que otorga a los usuarios cuatro derechos fundamentales."
+/>
+
+<twig:block-features-icon
+    :features="[
+        {
+            icon: 'fas fa-user',
+            title: 'Ejecutar',
+            description: 'El usuario tiene la libertad de ejecutar el programa como lo desee, con cualquier propósito (para uso personal, educativo, comercial, etc.).'
+        },
+        {
+            icon: 'fas fa-user',
+            title: 'Estudiar',
+            description: 'El usuario tiene la libertad de estudiar el programa y adaptarlo a sus necesidades.'
+        },
+        {
+            icon: 'fas fa-user',
+            title: 'Distribuir',
+            description: 'El usuario tiene la libertad de distribuir copias del programa, ya sea en forma gratuita o a cambio de un precio.'
+        },
+        {
+            icon: 'fas fa-user',
+            title: 'Mejorar',
+            description: 'El usuario tiene la libertad de mejorar el programa y distribuir las mejoras a terceros.'
+        }
+    ]"
+/>
+
+<twig:block-title
+    title="Licencias de Software Libre"
+    subtitle="Existen muchas licencias de software, cada una con sus propias características y beneficios."
+/>
+
+<twig:block-card-grid
+    :cards="[
+        {
+            title: 'Licencia AGPL',
+            description: 'Permite el uso, modificación y distribución del software, siempre que se incluya el código fuente original. Esta licencia incluye al software que se ejecuta en servidores.'
+        },
+        {
+            title: 'Licencia GPL',
+            description: 'Permite el uso, modificación y distribución del software, siempre que se incluya el código fuente original.'
+        },
+        {
+            title: 'Licencia LGPL',
+            description: 'Permite el uso, modificación y distribución del software, siempre que se incluya el código fuente original.'
+        },
+        {
+            title: 'Licencia MIT',
+            description: 'Permite el uso, modificación y distribución del software sin restricciones, siempre que se incluya el aviso de copyright original.'
+        },
+    ]"
+    :cols="2"
+/>
+
+<twig:block-cta
+    title="¿Quieres saber más sobre software libre?"
+    description="¡Revisa la información en el sitio de la Free Software Foundation!"
+    button_text="¿Qué es el Software Libre?"
+    button_url="https://www.gnu.org/philosophy/free-sw.es.html"
+/>
+
+<twig:block-title
+    title="Proyectos de Software Libre"
+    subtitle="Participamos en diferentes proyectos de software libre."
+/>
+
+<twig:block-card-grid
+    :cards="[
+        {
+            title: 'Derafu ORG',
+            description: 'Colección de software libre para la creación de bibliotecas y aplicaciones web.',
+            button_text: 'Ver en GitHub',
+            button_url: 'https://github.com/derafu',
+        },
+        {
+            title: 'LibreDTE',
+            description: 'LibreDTE es un software libre para la generación de documentos tributarios electrónicos (DTE) en Chile.',
+            button_text: 'Ver en GitHub',
+            button_url: 'https://github.com/libredte',
+        }
+    ]"
+    :cols="2"
+/>
+
+<twig:block-quote
+    quote="Decidí migrar varios proyectos a la licencia MIT, que es más permisiva que la AGPL, para que mi software se pueda usar en más proyectos. Mi objetivo es que el software libre sea accesible para todos."
+    author="Esteban De La Fuente Rubio"
+    source="Derafu ORG"
+    image="/img/home/team/esteban.png"
+/>
+
+{% endblock %}
