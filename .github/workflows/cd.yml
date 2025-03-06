@@ -47,7 +47,10 @@ jobs:
         run: npm run build
 
       - name: Start PHP server
-        run: php -d display_errors=1 -d log_errors=1 -d error_reporting=E_ALL -d error_log=/tmp/php_errors.log -S 127.0.0.1:9000 public/index.php &
+        run: php -d display_errors=1 -d log_errors=1 -d error_reporting=E_ALL -d error_log=/dev/stderr -S 127.0.0.1:9000 public/index.php &
+
+      - name: Debug HTTP response
+        run: curl -v http://127.0.0.1:9000/
 
       - name: Download static HTML with wget
         run: |
@@ -58,8 +61,8 @@ jobs:
                --restrict-file-names=windows \
                http://127.0.0.1:9000/ || [[ $? == 8 ]]
 
-      - name: Show PHP error log
-        run: cat /tmp/php_errors.log || true
+      # - name: Show PHP error log
+      #   run: cat /tmp/php_errors.log || true
 
       - name: Fail if output directory is missing or empty
         run: |
