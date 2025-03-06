@@ -46,11 +46,8 @@ jobs:
       - name: Build with Vite
         run: npm run build
 
-      - name: Enable error logging
-        run: echo 'export PHP_INI_SCAN_DIR=/etc/php/cli/conf.d && echo "error_log = /tmp/php_errors.log" > /etc/php/cli/conf.d/99-error-log.ini' >> $GITHUB_ENV
-
       - name: Start PHP server
-        run: php -d display_errors=1 -d log_errors=1 -d error_reporting=E_ALL -S 127.0.0.1:9000 public/index.php &
+        run: php -d display_errors=1 -d log_errors=1 -d error_reporting=E_ALL -d error_log=/tmp/php_errors.log -S 127.0.0.1:9000 public/index.php &
 
       - name: Download static HTML with wget
         run: |
@@ -63,6 +60,13 @@ jobs:
 
       - name: Show PHP error log
         run: cat /tmp/php_errors.log || true
+
+      - name: Fail if output directory is missing or empty
+        run: |
+          if [ ! -d "output" ] || [ -z "$(ls -A output)" ]; then
+            echo "Error: output directory is missing or empty."
+            exit 1
+          fi
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
