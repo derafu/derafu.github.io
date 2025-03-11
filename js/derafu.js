@@ -50,13 +50,21 @@ function loadDerafuHeader(containerId) {
                                                                                                     <i class="fa-solid fa-earth-americas fa-fw me-1"></i>
                                                                                                 Translation with I18n/ICU
                                             </a>
-                                                                                                                                                                <a class="dropdown-item" href="https://derafu.org/log">
-                                                                                                    <i class="fa-solid fa-history fa-fw me-1"></i>
-                                                                                                Logbook
-                                            </a>
                                                                                                                                                                 <a class="dropdown-item" href="https://derafu.org/support">
                                                                                                     <i class="fa-solid fa-life-ring fa-fw me-1"></i>
                                                                                                 Support with Helpers
+                                            </a>
+                                                                                                                                                                <a class="dropdown-item" href="https://derafu.org/api">
+                                                                                                    <i class="fa-solid fa-server fa-fw me-1"></i>
+                                                                                                API with Discovery
+                                            </a>
+                                                                                                                                                                <a class="dropdown-item" href="https://derafu.org/mail">
+                                                                                                    <i class="fa-solid fa-envelope fa-fw me-1"></i>
+                                                                                                Email Sending
+                                            </a>
+                                                                                                                                                                <a class="dropdown-item" href="https://derafu.org/log">
+                                                                                                    <i class="fa-solid fa-history fa-fw me-1"></i>
+                                                                                                Logbook
                                             </a>
                                                                                                             </div>
                                                             <div class="col-4 mb-4">
@@ -93,6 +101,14 @@ function loadDerafuHeader(containerId) {
                                                                                                     <i class="fa-solid fa-code fa-fw me-1"></i>
                                                                                                 XML Encoding and Validation
                                             </a>
+                                                                                                                                                                <a class="dropdown-item" href="https://derafu.org/certificate">
+                                                                                                    <i class="fa-solid fa-certificate fa-fw me-1"></i>
+                                                                                                Digital Certificates
+                                            </a>
+                                                                                                                                                                <a class="dropdown-item" href="https://derafu.org/signature">
+                                                                                                    <i class="fa-solid fa-signature fa-fw me-1"></i>
+                                                                                                Digital Signature and XML-DSIG
+                                            </a>
                                                                                                             </div>
                                                             <div class="col-4 mb-4">
                                     <h6 class="dropdown-header">Views and Templates</h6>
@@ -124,46 +140,46 @@ function loadDerafuHeader(containerId) {
                                                                                                     <i class="fa-solid fa-chart-line fa-fw me-1"></i>
                                                                                                 Graphics with GD
                                             </a>
-                                                                                                                                                                <a class="dropdown-item" href="https://www.npmjs.com/package/vite-plugin-d2">
+                                                                                                                                                                <a class="dropdown-item" href="https://github.com/derafu/vite-plugin-d2#readme">
                                                                                                     <i class="fa-solid fa-vector-square fa-fw me-1"></i>
                                                                                                 D2 diagrams to SVG
                                             </a>
-                                                                                                            </div>
-                                                            <div class="col-4 mb-4">
-                                    <h6 class="dropdown-header">Services for Applications</h6>
-                                                                                                                        <a class="dropdown-item" href="https://derafu.org/mail">
-                                                                                                    <i class="fa-solid fa-envelope fa-fw me-1"></i>
-                                                                                                Email Sending
-                                            </a>
-                                                                                                                                                                <a class="dropdown-item" href="https://derafu.org/api">
-                                                                                                    <i class="fa-solid fa-server fa-fw me-1"></i>
-                                                                                                API with Discovery
+                                                                                                                                                                <a class="dropdown-item" href="https://github.com/derafu/escpos#readme">
+                                                                                                    <i class="fa-solid fa-print fa-fw me-1"></i>
+                                                                                                ESCPOS for Printers
                                             </a>
                                                                                                             </div>
                                                             <div class="col-4 mb-4">
-                                    <h6 class="dropdown-header">Security and Authentication</h6>
-                                                                                                                        <a class="dropdown-item" href="https://derafu.org/certificate">
-                                                                                                    <i class="fa-solid fa-certificate fa-fw me-1"></i>
-                                                                                                Digital Certificates
-                                            </a>
-                                                                                                                                                                <a class="dropdown-item" href="https://derafu.org/signature">
-                                                                                                    <i class="fa-solid fa-signature fa-fw me-1"></i>
-                                                                                                Digital Signature and XML-DSIG
+                                    <h6 class="dropdown-header">Automation</h6>
+                                                                                                                        <a class="dropdown-item" href="https://derafu.org/workflow">
+                                                                                                    <i class="fa-solid fa-arrows-rotate fa-fw me-1"></i>
+                                                                                                Workflow
                                             </a>
                                                                                                             </div>
                                                             <div class="col-4 mb-4">
                                     <h6 class="dropdown-header">Standards and Rules</h6>
-                                                                                                                        <a class="dropdown-item" href="https://packagist.org/packages/derafu/l10n-cl-rut">
+                                                                                                                        <a class="dropdown-item" href="https://github.com/derafu/l10n-cl-rut#readme">
                                                                                                     <i class="fa-solid fa-id-badge fa-fw me-1"></i>
                                                                                                 L10n: Chile - RUN/RUT Formatting and Validation
                                             </a>
-                                                                                                                                                                <a class="dropdown-item" href="https://packagist.org/packages/derafu/l10n-cl-enum">
+                                                                                                                                                                <a class="dropdown-item" href="https://github.com/derafu/l10n-cl-enum#readme">
                                                                                                     <i class="fa-solid fa-list fa-fw me-1"></i>
                                                                                                 L10n: Chile - Enum Collection
                                             </a>
-                                                                                                                                                                <a class="dropdown-item" href="https://packagist.org/packages/derafu/enum">
+                                                                                                                                                                <a class="dropdown-item" href="https://github.com/derafu/enum#readme">
                                                                                                     <i class="fa-solid fa-globe fa-fw me-1"></i>
                                                                                                 Global Enum Collection
+                                            </a>
+                                                                                                            </div>
+                                                            <div class="col-4 mb-4">
+                                    <h6 class="dropdown-header">System Administration</h6>
+                                                                                                                        <a class="dropdown-item" href="https://github.com/derafu/docker-php-caddy-server#readme">
+                                                                                                    <i class="fa-solid fa-server fa-fw me-1"></i>
+                                                                                                Docker PHP Caddy Server
+                                            </a>
+                                                                                                                                                                <a class="dropdown-item" href="https://github.com/derafu/deployer#readme">
+                                                                                                    <i class="fa-solid fa-upload fa-fw me-1"></i>
+                                                                                                PHP Deployer for multiple sites
                                             </a>
                                                                                                             </div>
                                                     </div>
