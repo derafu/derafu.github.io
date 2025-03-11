@@ -1,8 +1,10 @@
 # Derafu: Derafu ORG Page
 
-<!---
-[![CI Workflow](https://github.com/derafu/derafu.github.io/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/derafu/derafu.github.io/actions/workflows/ci.yml?query=branch%3Amain)
--->
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+![GitHub last commit](https://img.shields.io/github/last-commit/derafu/backbone/main)
+![CI Workflow](https://github.com/derafu/backbone/actions/workflows/ci.yml/badge.svg?branch=main&event=push)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/derafu/backbone)
+![GitHub Issues](https://img.shields.io/github/issues-raw/derafu/backbone)
 
 > Innovation & Community in Technology and Education.
+
+This is the website in <https://www.derafu.org>
