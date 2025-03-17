@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Derafu ORG</title>
+    <title>Derafu: Derafu ORG Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-light.min.css" rel="stylesheet" />
@@ -31,7 +31,7 @@
                 <div class="collapse navbar-collapse" id="navbarContent">
                         <ul class="navbar-nav me-auto">
                                         <li class="nav-item dropdown mega-menu-wrapper">
-                <a class="nav-link dropdown-toggle" href="index.html#" role="button" data-bs-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="github.html#" role="button" data-bs-toggle="dropdown">
                                             <i class="fa-brands fa-github me-1"></i>
                                         Free Software Projects
                 </a>
@@ -262,7 +262,7 @@
             
 
                                                     <li class="nav-item ms-2">
-                        <a href="index.html#contact" class="btn btn-primary">
+                        <a href="github.html#contact" class="btn btn-primary">
                                                             <i class="fa-solid fa-circle-info me-1"></i>
                                                         Contact &amp; Collaboration
                         </a>
@@ -274,467 +274,183 @@
 
     
             <main>
-            <section>
-    <div class="derafu-block-hero derafu-block-hero--mini "
-        id="block-hero--67d83dc714870">
-    <div class="derafu-block-hero__container container">
-        <div class="derafu-block-hero__content derafu-block-hero__content--center
-            ">
-            <h1 class="derafu-block-hero__title">Derafu ORG</h1>
-            <div class="derafu-block-hero__subtitle">Innovation &amp; Community in Technology and Education</div>
-                    </div>
-    </div>
+            <div class="container py-4">
+    <div class="markdown-body"><h1><a id="content-derafu-github---webhook-handling-and-other-sysadmin-tasks" href="github.html#content-derafu-github---webhook-handling-and-other-sysadmin-tasks" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Derafu: GitHub - Webhook handling and other sysadmin tasks</h1>
+<p>A lightweight, no-dependency PHP library for handling GitHub webhooks, with a focus on security and extensibility.</p>
+<p><img src="https://img.shields.io/github/last-commit/derafu/github/main" alt="GitHub last commit" />
+<img src="https://img.shields.io/github/languages/code-size/derafu/github" alt="GitHub code size in bytes" />
+<img src="https://img.shields.io/github/issues-raw/derafu/github" alt="GitHub Issues" />
+<img src="https://poser.pugx.org/derafu/github/downloads" alt="Total Downloads" />
+<img src="https://poser.pugx.org/derafu/github/d/monthly" alt="Monthly Downloads" /></p>
+<h2><a id="content-overview" href="github.html#content-overview" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Overview</h2>
+<p>This library provides a simple, secure way to handle GitHub webhooks, allowing you to easily react to GitHub events such as push notifications, pull requests, workflow runs, and more.</p>
+<h2><a id="content-features" href="github.html#content-features" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Features</h2>
+<ul>
+<li><strong>Zero Dependencies</strong>: Doesn’t require any external packages.</li>
+<li><strong>Secure</strong>: Built with security best practices, including HMAC signature validation.</li>
+<li><strong>Extensible</strong>: Easily add custom handlers for any GitHub event.</li>
+<li><strong>Typed</strong>: Fully typed for modern PHP 8.3 environments.</li>
+<li><strong>Event-driven</strong>: Handle different GitHub webhook events with separate handlers.</li>
+</ul>
+<h2><a id="content-installation" href="github.html#content-installation" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Installation</h2>
+<h3><a id="content-via-composer" href="github.html#content-via-composer" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Via Composer</h3>
+<pre><code class="line-numbers match-braces language-bash">composer require derafu/github
+</code></pre>
+<h3><a id="content-manual-installation" href="github.html#content-manual-installation" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Manual Installation</h3>
+<p>Clone the repository:</p>
+<pre><code class="line-numbers match-braces language-bash">git clone https://github.com/derafu/github.git
+</code></pre>
+<h2><a id="content-usage" href="github.html#content-usage" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Usage</h2>
+<h3><a id="content-basic-setup" href="github.html#content-basic-setup" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Basic Setup</h3>
+<ol>
+<li>Create a webhook endpoint:</li>
+</ol>
+<pre><code class="line-numbers match-braces language-php">&lt;?php
+// webhook.php
+
+declare(strict_types=1);
+
+namespace Derafu\GitHub\Webhook;
+
+use Derafu\GitHub\Logger;
+use Derafu\GitHub\Webhook\Handler;
+use Derafu\GitHub\Webhook\Response;
+use Exception;
+
+// Load the autoloader.
+require 'vendor/autoload.php';
+
+// Load configuration.
+$config = require 'config.php';
+
+// Create the handler.
+$logger = new Logger();
+$handler = new Handler($config, $logger);
+
+// Handle the webhook.
+try {
+    $notification = $handler-&gt;handle();
+    $response = $notification-&gt;getResponse();
+} catch (Exception $e) {
+    $response = new Response([
+        'code' =&gt; $e-&gt;getCode() ?: 1,
+        'data' =&gt; [
+            'message' =&gt; $e-&gt;getMessage(),
+            'logs' =&gt; $logger-&gt;getLogs(),
+        ],
+    ]);
+}
+
+// Send the response.
+http_response_code($response-&gt;getHttpCode());
+header('Content-Type: application/json');
+echo json_encode($response-&gt;toArray(), JSON_PRETTY_PRINT);
+</code></pre>
+<ol start="2">
+<li>Create a configuration file:</li>
+</ol>
+<pre><code class="line-numbers match-braces language-php">&lt;?php
+// config.php
+
+declare(strict_types=1);
+
+use Derafu\GitHub\Webhook\EventHandler\WorkflowRunHandler;
+use Derafu\GitHub\Webhook\Notification;
+
+return [
+    // Add handlers for different events.
+    'handlers' =&gt; [
+        'workflow_run' =&gt; fn (Notification $notification) =&gt; WorkflowRunHandler::deploy(
+            $notification
+        ),
+    ],
+];
+</code></pre>
+<h3><a id="content-github-webhook-configuration" href="github.html#content-github-webhook-configuration" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>GitHub Webhook Configuration</h3>
+<ol>
+<li>Go to your GitHub repository.</li>
+<li>Navigate to Settings &gt; Webhooks &gt; Add webhook.</li>
+<li>Set the Payload URL to your webhook endpoint (e.g., <code>https://example.com/webhook.php</code>).</li>
+<li>Set Content type to <code>application/json</code>.</li>
+<li>Set a Secret that matches your configuration.</li>
+<li>Choose which events to receive.</li>
+<li>Ensure the webhook is active.</li>
+</ol>
+<h2><a id="content-handler-examples" href="github.html#content-handler-examples" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Handler Examples</h2>
+<h3><a id="content-workflow-run-handler" href="github.html#content-workflow-run-handler" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Workflow Run Handler</h3>
+<p>This handler deploys your application when a GitHub Action workflow completes successfully:</p>
+<pre><code class="line-numbers match-braces language-php">&lt;?php
+
+namespace Derafu\GitHub\Webhook\EventHandler;
+
+use Derafu\GitHub\Webhook\Notification;
+
+final class WorkflowRunHandler
+{
+    public static function deploy(
+        Notification $notification,
+        string $deployer,
+        array $sites
+    ): ?string {
+        $payload = $notification-&gt;getPayload();
+
+        $branch = $payload-&gt;workflow_run-&gt;head_branch;
+        $workflow = $payload-&gt;workflow-&gt;name;
+        $status = $payload-&gt;workflow_run-&gt;status;
+        $conclusion = $payload-&gt;workflow_run-&gt;conclusion;
+
+        // Check for matching sites and deploy if conditions are met.
+        foreach ($sites as $site =&gt; $config) {
+            // Deployment logic here.
+        }
+
+        return null;
+    }
+}
+</code></pre>
+<p>The included habdler uses <a rel="nofollow noopener noreferrer" target="_blank" class="external-link" href="https://derafu.org/docker-php-caddy-server/">Docker</a> and <a rel="nofollow noopener noreferrer" target="_blank" class="external-link" href="https://derafu.org/deployer/">Deployer</a>.</p>
+<h3><a id="content-custom-handler-example" href="github.html#content-custom-handler-example" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Custom Handler Example</h3>
+<p>You can create handlers for any GitHub event:</p>
+<pre><code class="line-numbers match-braces language-php">&lt;?php
+// In your config.php
+
+'push' =&gt; function (Notification $notification) {
+    $payload = $notification-&gt;getPayload();
+    $repo = $payload-&gt;repository-&gt;name;
+    $branch = str_replace('refs/heads/', '', $payload-&gt;ref);
+
+    // Your custom logic here.
+
+    $notification-&gt;setResponse(&quot;Processed push to $repo on branch $branch.&quot;);
+},
+</code></pre>
+<h2><a id="content-security-best-practices" href="github.html#content-security-best-practices" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Security Best Practices</h2>
+<ul>
+<li>Always validate the webhook signature with your secret.</li>
+<li>Use environment variables for storing secrets.</li>
+<li>Escape any arguments used in shell commands with <code>escapeshellarg()</code>.</li>
+<li>Validate repository names against a whitelist.</li>
+<li>Implement proper error handling and logging.</li>
+</ul>
+<h2><a id="content-supported-events" href="github.html#content-supported-events" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Supported Events</h2>
+<p>The library supports all GitHub webhook events, including:</p>
+<ul>
+<li><code>fork</code></li>
+<li><code>ping</code></li>
+<li><code>push</code></li>
+<li><code>pull_request</code></li>
+<li><code>release</code></li>
+<li><code>star</code></li>
+<li><code>status</code></li>
+<li><code>workflow_run</code></li>
+</ul>
+<p>For the events not explicitly declared, you can configure a closure for the <code>default</code> handler and take any action from there.</p>
+<h2><a id="content-contributing" href="github.html#content-contributing" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Contributing</h2>
+<p>Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.</p>
+<h2><a id="content-license" href="github.html#content-license" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>License</h2>
+<p>This package is open-sourced software licensed under the <a rel="nofollow noopener noreferrer" target="_blank" class="external-link" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 </div>
-
-</section>
-
-<section id="software">
-    <div class="derafu-block-title mt-4 container" id="block-title--67d83dc7162a2">
-    <div class="derafu-block-title__wrapper text-center derafu-block-title__wrapper--bordered">
-        <h2 class="derafu-block-title__title">
-            Some Free Software Projects
-        </h2>
-                    <p class="derafu-block-title__subtitle">
-                Developing open source tools to simplify and improve software development.
-            </p>
-            </div>
 </div>
-
-
-    <div class="derafu-block-card-grid container" id="block-card-grid--67d83dc716f76">
-    <div class="row g-4">
-                    <div class="col-sm-6 col-lg-3
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/software/derafu-foundation.webp" alt="Derafu Foundation" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">Derafu Foundation</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                A standardized base for creating consistent PHP projects.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://derafu.org/foundation" class="derafu-block-card-grid__button btn " role="button">
-                                See Project
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-                    <div class="col-sm-6 col-lg-3
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/software/derafu-twig.webp" alt="UX Components for Twig" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">UX Components for Twig</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                Twig extension with filters and approximately 40 components for the PHP template system.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://derafu.org/twig" class="derafu-block-card-grid__button btn " role="button">
-                                See Project
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-                    <div class="col-sm-6 col-lg-3
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/software/derafu-form.webp" alt="Forms" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">Forms</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                Declarative, schema-based approach to form definition and rendering.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://derafu.org/form" class="derafu-block-card-grid__button btn " role="button">
-                                See Project
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-                    <div class="col-sm-6 col-lg-3
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/software/derafu-chart.webp" alt="Graphics with GD" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">Graphics with GD</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                PHP library to generate charts with GD or other custom renderers.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://derafu.org/chart" class="derafu-block-card-grid__button btn " role="button">
-                                See Project
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-                    <div class="col-sm-6 col-lg-3
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/software/derafu-query.webp" alt="SQL Query Operators" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">SQL Query Operators</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                Query builder that uses path expressions and configurable operators to simplify complex database queries.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://derafu.org/query" class="derafu-block-card-grid__button btn " role="button">
-                                See Project
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-                    <div class="col-sm-6 col-lg-3
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/software/derafu-data-processor.webp" alt="Data Processing" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">Data Processing</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                Data processing through four phases: casting, transformation, sanitization and validation.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://derafu.org/data-processor" class="derafu-block-card-grid__button btn " role="button">
-                                See Project
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-                    <div class="col-sm-6 col-lg-3
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/software/derafu-selector.webp" alt="Array Selection and Filtering" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">Array Selection and Filtering</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                Querying, extracting, and modifying complex data structures using a declarative selector syntax.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://derafu.org/selector" class="derafu-block-card-grid__button btn " role="button">
-                                See Project
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-                    <div class="col-sm-6 col-lg-3
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/software/derafu-xml.webp" alt="XML Encoding and Validation" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">XML Encoding and Validation</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                XML manipulation, providing robust tools for encoding, decoding, validating, and querying XML documents.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://derafu.org/xml" class="derafu-block-card-grid__button btn " role="button">
-                                See Project
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-            </div>
-</div>
-
-
-    <div class="derafu-block-cta " id="block-cta--67d83dc718df0">
-    <div class="derafu-block-cta__container container">
-        <div class="derafu-block-cta__row row align-items-center">
-                        <div class="col-md-8 derafu-block-cta__content">
-                <h3 class="derafu-block-cta__title">Want to see more free software projects?</h3>
-                <p class="derafu-block-cta__description">Check out the complete list of projects on the upper menu, or <a href='free-software.html' class='link-light text-decoration-none'>learn more about free software</a> and our <a href='docs.html' class='link-light text-decoration-none'>documentation</a>.</p>
-            </div>
-
-                        <div class="col-md-4 derafu-block-cta__action">
-                <a href="javascript:document.querySelector(&#039;.nav-item.dropdown.mega-menu-wrapper .dropdown-toggle&#039;).click();" class="derafu-block-cta__button">
-                    See All Projects
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-</section>
-
-<section id="education">
-    <div class="derafu-block-title mt-4 container" id="block-title--67d83dc719c9d">
-    <div class="derafu-block-title__wrapper text-center derafu-block-title__wrapper--bordered">
-        <h2 class="derafu-block-title__title">
-            Education
-        </h2>
-                    <p class="derafu-block-title__subtitle">
-                Creating innovative tools that make learning more accessible and interactive.
-            </p>
-            </div>
-</div>
-
-
-    <div class="derafu-block-card-grid container" id="block-card-grid--67d83dc719d59">
-    <div class="row g-4">
-                    <div class="col-sm-6 col-lg-4
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/education/flobix.png" alt="Flobix" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">Flobix</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                An educational tool that allows learning through images and symbols.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://www.flobix.org" class="derafu-block-card-grid__button btn " role="button">
-                                Learn More
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-                    <div class="col-sm-6 col-lg-4
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/education/liberalism.png" alt="Responsibility and Freedom" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">Responsibility and Freedom</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                Respect for individual life projects based on the principle of non-aggression.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="index.html" class="derafu-block-card-grid__button btn disabled" role="button">
-                                Learn More
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-                    <div class="col-sm-6 col-lg-4
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/education/finance.png" alt="Personal Finance" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">Personal Finance</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                Only informative content. No investment recommendations.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="index.html" class="derafu-block-card-grid__button btn disabled" role="button">
-                                Learn More
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-            </div>
-</div>
-
-</section>
-
-<hr/>
-
-<section id="community">
-    <div class="derafu-block-title mt-4 container" id="block-title--67d83dc719e51">
-    <div class="derafu-block-title__wrapper text-center derafu-block-title__wrapper--bordered">
-        <h2 class="derafu-block-title__title">
-            Community Initiatives
-        </h2>
-                    <p class="derafu-block-title__subtitle">
-                Promoting projects that promote collaboration, inclusion and shared knowledge.
-            </p>
-            </div>
-</div>
-
-
-    <div class="derafu-block-card-grid container" id="block-card-grid--67d83dc719ee5">
-    <div class="row g-4">
-                    <div class="col-sm-6 col-lg-4
-                                offset-lg-4            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/community/guarida.png" alt="Guarida" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">Guarida</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                A space and community of games focused on collectible card games and RPGs.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://www.guarida.cl" class="derafu-block-card-grid__button btn " role="button">
-                                Learn More
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-            </div>
-</div>
-
-</section>
-
-<hr/>
-
-<section id="team">
-    <div class="derafu-block-title mt-4 container" id="block-title--67d83dc719f9b">
-    <div class="derafu-block-title__wrapper text-center derafu-block-title__wrapper--bordered">
-        <h2 class="derafu-block-title__title">
-            Team
-        </h2>
-                    <p class="derafu-block-title__subtitle">
-                Meet the people behind Derafu ORG, committed to open source and education.
-            </p>
-            </div>
-</div>
-
-
-    <div class="derafu-block-team container derafu-block-team--cols-3 derafu-block-team--align-center" id="block-team--67d83dc71a02d">
-    <div class="row g-4">
-                                <div class="col-sm-6 col-lg-4
-                ">
-                <div class="derafu-block-team__member">
-                                        <div class="derafu-block-team__image">
-                        <img src="img/home/team/esteban.png" alt="Esteban" class="img-fluid">
-                    </div>
-
-                                        <div class="derafu-block-team__info">
-                        <h3 class="derafu-block-team__name">Esteban</h3>
-                        <div class="derafu-block-team__role">Software Developer &amp; Entrepreneur</div>
-
-                                                    <div class="derafu-block-team__bio">Passionate about software development, automation and business strategies. With years of experience in creating innovative solutions. Currently pursuing an MBA.</div>
-                        
-                                                    <div class="derafu-block-team__links">
-                                                                    <a href="https://www.linkedin.com/in/estebandelaf" class="derafu-block-team__link btn ">
-                                                                                    <i class="fa-brands fa-linkedin"></i>
-                                                                                <span>LinkedIn</span>
-                                    </a>
-                                                                    <a href="https://github.com/estebandelaf" class="derafu-block-team__link btn ">
-                                                                                    <i class="fa-brands fa-github"></i>
-                                                                                <span>GitHub</span>
-                                    </a>
-                                                            </div>
-                                            </div>
-                </div>
-            </div>
-                                <div class="col-sm-6 col-lg-4
-                ">
-                <div class="derafu-block-team__member">
-                                        <div class="derafu-block-team__image">
-                        <img src="img/home/team/marcela.png" alt="Marcela" class="img-fluid">
-                    </div>
-
-                                        <div class="derafu-block-team__info">
-                        <h3 class="derafu-block-team__name">Marcela</h3>
-                        <div class="derafu-block-team__role">Education &amp; Marketing</div>
-
-                                                    <div class="derafu-block-team__bio">Passionate about education and business management, with training in early childhood education and a diploma in marketing. Currently expanding her skills in programming.</div>
-                        
-                                                    <div class="derafu-block-team__links">
-                                                                    <a href="https://www.linkedin.com/in/marcela-morales-peralta-26054a88" class="derafu-block-team__link btn ">
-                                                                                    <i class="fa-brands fa-linkedin"></i>
-                                                                                <span>LinkedIn</span>
-                                    </a>
-                                                            </div>
-                                            </div>
-                </div>
-            </div>
-                                <div class="col-sm-6 col-lg-4
-                ">
-                <div class="derafu-block-team__member">
-                                        <div class="derafu-block-team__image">
-                        <img src="img/home/team/valentina.png" alt="Valentina" class="img-fluid">
-                    </div>
-
-                                        <div class="derafu-block-team__info">
-                        <h3 class="derafu-block-team__name">Valentina</h3>
-                        <div class="derafu-block-team__role">Kinesiologist &amp; Future Software Developer</div>
-
-                                                    <div class="derafu-block-team__bio">Kinesiologist in transition to the technological world. Passionate about technology, well-being and full consciousness through yoga. Currently completing a programming bootcamp.</div>
-                        
-                                                    <div class="derafu-block-team__links">
-                                                                    <a href="index.html" class="derafu-block-team__link btn disabled">
-                                                                                    <i class="fa-brands fa-linkedin"></i>
-                                                                                <span>LinkedIn</span>
-                                    </a>
-                                                            </div>
-                                            </div>
-                </div>
-            </div>
-            </div>
-</div>
-
-</section>
         </main>
     
             <div id="footer-container"></div>

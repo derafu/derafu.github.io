@@ -1,6 +1,8 @@
 function loadDerafuHeader(containerId) {
-    document.getElementById(containerId).innerHTML = `
-        
+    const header = document.getElementById(containerId);
+    if (header) {
+        header.innerHTML = `
+            
 
 <nav class="derafu-block-header navbar navbar-expand-lg  navbar-dark sticky-top bg-dark"
            id="top">
@@ -26,7 +28,11 @@ function loadDerafuHeader(containerId) {
                         <div class="row">
                                                             <div class="col-4 mb-4">
                                     <h6 class="dropdown-header">Base for Applications</h6>
-                                                                                                                        <a class="dropdown-item" href="https://derafu.org/foundation">
+                                                                                                                        <a class="dropdown-item" href="https://derafu.org/site">
+                                                                                                    <i class="fa-solid fa-laptop fa-fw me-1"></i>
+                                                                                                Derafu Site
+                                            </a>
+                                                                                                                                                                <a class="dropdown-item" href="https://derafu.org/foundation">
                                                                                                     <i class="fa-solid fa-house fa-fw me-1"></i>
                                                                                                 Derafu Foundation
                                             </a>
@@ -76,6 +82,14 @@ function loadDerafuHeader(containerId) {
                                                                                                                                                                 <a class="dropdown-item" href="https://derafu.org/query">
                                                                                                     <i class="fa-solid fa-database fa-fw me-1"></i>
                                                                                                 SQL Query Operators
+                                            </a>
+                                                                                                                                                                <a class="dropdown-item" href="https://derafu.org/seed">
+                                                                                                    <i class="fa-solid fa-seedling fa-fw me-1"></i>
+                                                                                                Database Seeder
+                                            </a>
+                                                                                                                                                                <a class="dropdown-item" href="https://derafu.org/spreadsheet">
+                                                                                                    <i class="fa-solid fa-file-excel fa-fw me-1"></i>
+                                                                                                Spreadsheet
                                             </a>
                                                                                                                                                                 <a class="dropdown-item" href="https://derafu.org/data-processor">
                                                                                                     <i class="fa-solid fa-list-check fa-fw me-1"></i>
@@ -140,11 +154,11 @@ function loadDerafuHeader(containerId) {
                                                                                                     <i class="fa-solid fa-chart-line fa-fw me-1"></i>
                                                                                                 Graphics with GD
                                             </a>
-                                                                                                                                                                <a class="dropdown-item" href="https://github.com/derafu/vite-plugin-d2#readme">
+                                                                                                                                                                <a class="dropdown-item" href="/vite-plugin-d2">
                                                                                                     <i class="fa-solid fa-vector-square fa-fw me-1"></i>
                                                                                                 D2 diagrams to SVG
                                             </a>
-                                                                                                                                                                <a class="dropdown-item" href="https://github.com/derafu/escpos#readme">
+                                                                                                                                                                <a class="dropdown-item" href="/escpos">
                                                                                                     <i class="fa-solid fa-print fa-fw me-1"></i>
                                                                                                 ESCPOS for Printers
                                             </a>
@@ -158,28 +172,32 @@ function loadDerafuHeader(containerId) {
                                                                                                             </div>
                                                             <div class="col-4 mb-4">
                                     <h6 class="dropdown-header">Standards and Rules</h6>
-                                                                                                                        <a class="dropdown-item" href="https://github.com/derafu/l10n-cl-rut#readme">
+                                                                                                                        <a class="dropdown-item" href="/l10n-cl-rut">
                                                                                                     <i class="fa-solid fa-id-badge fa-fw me-1"></i>
                                                                                                 L10n: Chile - RUN/RUT Formatting and Validation
                                             </a>
-                                                                                                                                                                <a class="dropdown-item" href="https://github.com/derafu/l10n-cl-enum#readme">
+                                                                                                                                                                <a class="dropdown-item" href="/l10n-cl-enum">
                                                                                                     <i class="fa-solid fa-list fa-fw me-1"></i>
                                                                                                 L10n: Chile - Enum Collection
                                             </a>
-                                                                                                                                                                <a class="dropdown-item" href="https://github.com/derafu/enum#readme">
+                                                                                                                                                                <a class="dropdown-item" href="/enum">
                                                                                                     <i class="fa-solid fa-globe fa-fw me-1"></i>
                                                                                                 Global Enum Collection
                                             </a>
                                                                                                             </div>
                                                             <div class="col-4 mb-4">
                                     <h6 class="dropdown-header">System Administration</h6>
-                                                                                                                        <a class="dropdown-item" href="https://github.com/derafu/docker-php-caddy-server#readme">
+                                                                                                                        <a class="dropdown-item" href="/docker-php-caddy-server">
                                                                                                     <i class="fa-solid fa-server fa-fw me-1"></i>
                                                                                                 Docker PHP Caddy Server
                                             </a>
-                                                                                                                                                                <a class="dropdown-item" href="https://github.com/derafu/deployer#readme">
+                                                                                                                                                                <a class="dropdown-item" href="/deployer">
                                                                                                     <i class="fa-solid fa-upload fa-fw me-1"></i>
                                                                                                 PHP Deployer for multiple sites
+                                            </a>
+                                                                                                                                                                <a class="dropdown-item" href="/github">
+                                                                                                    <i class="fa-brands fa-github fa-fw me-1"></i>
+                                                                                                Webhooks for Github
                                             </a>
                                                                                                             </div>
                                                     </div>
@@ -241,12 +259,15 @@ function loadDerafuHeader(containerId) {
     </div>
 </nav>
 
-    `;
+        `;
+    }
 }
 
 function loadDerafuFooter(containerId) {
-    document.getElementById(containerId).innerHTML = `
-        <footer class="derafu-block-footer " id="contact">
+    const footer = document.getElementById(containerId);
+    if (footer) {
+        footer.innerHTML = `
+            <footer class="derafu-block-footer " id="contact">
     <div class="container">
         <div class="row">
                                         <div class="col">
@@ -327,7 +348,8 @@ function loadDerafuFooter(containerId) {
         </div>
     </footer>
 
-    `;
+        `;
+    }
 }
 
 function encodeToHtmlEntities(text) {

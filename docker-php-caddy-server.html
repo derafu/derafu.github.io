@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Derafu ORG</title>
+    <title>Derafu: Derafu ORG Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-light.min.css" rel="stylesheet" />
@@ -31,7 +31,7 @@
                 <div class="collapse navbar-collapse" id="navbarContent">
                         <ul class="navbar-nav me-auto">
                                         <li class="nav-item dropdown mega-menu-wrapper">
-                <a class="nav-link dropdown-toggle" href="index.html#" role="button" data-bs-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="docker-php-caddy-server.html#" role="button" data-bs-toggle="dropdown">
                                             <i class="fa-brands fa-github me-1"></i>
                                         Free Software Projects
                 </a>
@@ -262,7 +262,7 @@
             
 
                                                     <li class="nav-item ms-2">
-                        <a href="index.html#contact" class="btn btn-primary">
+                        <a href="docker-php-caddy-server.html#contact" class="btn btn-primary">
                                                             <i class="fa-solid fa-circle-info me-1"></i>
                                                         Contact &amp; Collaboration
                         </a>
@@ -274,467 +274,288 @@
 
     
             <main>
-            <section>
-    <div class="derafu-block-hero derafu-block-hero--mini "
-        id="block-hero--67d83dc714870">
-    <div class="derafu-block-hero__container container">
-        <div class="derafu-block-hero__content derafu-block-hero__content--center
-            ">
-            <h1 class="derafu-block-hero__title">Derafu ORG</h1>
-            <div class="derafu-block-hero__subtitle">Innovation &amp; Community in Technology and Education</div>
-                    </div>
-    </div>
+            <div class="container py-4">
+    <div class="markdown-body"><h1><a id="content-derafu-sites-server---docker-with-php-and-caddy-for-deployer" href="docker-php-caddy-server.html#content-derafu-sites-server---docker-with-php-and-caddy-for-deployer" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Derafu Sites Server - Docker with PHP and Caddy for Deployer</h1>
+<p><img src="https://img.shields.io/github/last-commit/derafu/docker-php-caddy-server/main" alt="GitHub last commit" />
+<img src="https://img.shields.io/github/languages/code-size/derafu/docker-php-caddy-server" alt="GitHub code size in bytes" />
+<img src="https://img.shields.io/github/issues-raw/derafu/docker-php-caddy-server" alt="GitHub Issues" /></p>
+<p>A modern Docker setup for hosting PHP websites with Caddy web server and SSH access for Deployer deployments.</p>
+<h2><a id="content-features" href="docker-php-caddy-server.html#content-features" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Features</h2>
+<ul>
+<li><strong>PHP 8.3</strong>: Supported PHP version with common extensions.</li>
+<li><strong>Caddy</strong>: Modern web server with automatic HTTPS.</li>
+<li><strong>SSH Access</strong>: For automated deployments with Deployer.</li>
+<li><strong>Automatic Site Discovery</strong>: Just add your site folder and it works.</li>
+<li><strong>Development Domains</strong>: Test with .local domains that map to production folders.</li>
+<li><strong>Automatic WWW Redirection</strong>: For second-level domains (e.g., example.com → <a rel="nofollow noopener noreferrer" target="_blank" class="external-link" href="http://www.example.com">www.example.com</a>).</li>
+<li><strong>Auto-HTTPS</strong>: Certificates are automatically generated on-demand.</li>
+<li><strong>Environment Separation</strong>: Development and production environments managed through Docker Compose override.</li>
+</ul>
+<h2><a id="content-quick-start" href="docker-php-caddy-server.html#content-quick-start" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Quick Start</h2>
+<h3><a id="content-prerequisites" href="docker-php-caddy-server.html#content-prerequisites" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Prerequisites</h3>
+<ul>
+<li>Docker and Docker Compose installed on your system.</li>
+<li>SSH key for deployment access.</li>
+</ul>
+<h3><a id="content-setup" href="docker-php-caddy-server.html#content-setup" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Setup</h3>
+<ol>
+<li>
+<p>Clone this repository:</p>
+<pre><code class="line-numbers match-braces language-bash">git clone https://github.com/derafu/docker-php-caddy-server.git
+cd docker-php-caddy-server
+</code></pre>
+</li>
+<li>
+<p>Add your SSH public key to <code>config/ssh/authorized_keys</code> for admin, and default deployment, access:</p>
+<pre><code class="line-numbers match-braces language-bash">cat ~/.ssh/id_rsa.pub &gt; config/ssh/authorized_keys
+</code></pre>
+</li>
+<li>
+<p>Build and start the container:</p>
+<pre><code class="line-numbers match-braces language-bash">docker-compose up -d
+</code></pre>
+<p>The <code>-d</code> parameter runs it in detached mode (background).</p>
+</li>
+</ol>
+<h3><a id="content-verification" href="docker-php-caddy-server.html#content-verification" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Verification</h3>
+<p>Check that the container is running:</p>
+<pre><code class="line-numbers match-braces language-bash">docker-compose ps
+</code></pre>
+<p>View container logs:</p>
+<pre><code class="line-numbers match-braces language-bash">docker-compose logs -f
+</code></pre>
+<p>The <code>-f</code> parameter allows you to follow logs in real-time.</p>
+<h3><a id="content-testing-your-first-site" href="docker-php-caddy-server.html#content-testing-your-first-site" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Testing Your First Site</h3>
+<ol>
+<li>
+<p>Create a test site directory structure:</p>
+<pre><code class="line-numbers match-braces language-bash">mkdir -p sites/www.example.com/public
+echo &quot;&lt;?php phpinfo();&quot; &gt; sites/www.example.com/public/index.php
+</code></pre>
+</li>
+<li>
+<p>Access the site at:</p>
+<ul>
+<li>Production mode: <a rel="nofollow noopener noreferrer" target="_blank" class="external-link" href="https://www.example.com">https://www.example.com</a> (requires DNS configuration).</li>
+<li>Development mode: <a rel="nofollow noopener noreferrer" target="_blank" class="external-link" href="https://www.example.com.local:8443">https://www.example.com.local:8443</a> (requires local hosts entry).</li>
+</ul>
+</li>
+</ol>
+<p>For local development, add to your <code>/etc/hosts</code> file:</p>
+<pre><code class="line-numbers match-braces">127.0.0.1 www.example.com.local
+</code></pre>
+<h2><a id="content-directory-structure" href="docker-php-caddy-server.html#content-directory-structure" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Directory Structure</h2>
+<pre><code class="line-numbers match-braces">docker-php-caddy-server/
+├── config/                     # Configuration files.
+│   ├── caddy/                  # Caddy configuration.
+│   ├── php/                    # PHP configuration.
+│   ├── ssh/                    # SSH configuration and authorized keys.
+│   └── supervisor/             # Supervisor configuration.
+├── sites/                      # Web sites directory for local development.
+│   └── www.example.com/        # Example site.
+│       └── public/             # Public web files.
+├── .env                        # Docker Compose environment configuration.
+├── Dockerfile                  # Container definition.
+├── docker-compose.yml          # Docker services configuration (production).
+└── docker-compose.override.yml # Development-specific configuration.
+</code></pre>
+<h2><a id="content-development-vs-production-environment" href="docker-php-caddy-server.html#content-development-vs-production-environment" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Development vs Production Environment</h2>
+<p>This project uses Docker Compose’s override functionality to separate development and production configurations:</p>
+<h3><a id="content-production-environment" href="docker-php-caddy-server.html#content-production-environment" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Production Environment</h3>
+<p>The base <code>docker-compose.yml</code> contains the minimal configuration needed for production deployment. It:</p>
+<ul>
+<li>Sets up required environment variables.</li>
+<li>Defines essential ports (HTTP, HTTPS, SSH).</li>
+<li>Doesn’t mount external volumes.</li>
+</ul>
+<h3><a id="content-development-environment" href="docker-php-caddy-server.html#content-development-environment" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Development Environment</h3>
+<p>The <code>docker-compose.override.yml</code> file adds development-specific settings:</p>
+<ul>
+<li>Adds additional development ports (e.g., management interface).</li>
+<li>Mounts local volumes for easy site development.</li>
+</ul>
+<h3><a id="content-usage" href="docker-php-caddy-server.html#content-usage" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Usage:</h3>
+<ul>
+<li>
+<p><strong>Development</strong>: Docker Compose automatically merges both files:</p>
+<pre><code class="line-numbers match-braces language-bash">docker-compose up -d
+</code></pre>
+</li>
+<li>
+<p><strong>Production</strong>: Use only the base configuration:</p>
+<pre><code class="line-numbers match-braces language-bash">docker-compose -f docker-compose.yml up -d
+</code></pre>
+</li>
+</ul>
+<h2><a id="content-access-and-management" href="docker-php-caddy-server.html#content-access-and-management" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Access and Management</h2>
+<h3><a id="content-ssh-access" href="docker-php-caddy-server.html#content-ssh-access" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>SSH Access</h3>
+<p>Connect to the container via SSH:</p>
+<pre><code class="line-numbers match-braces language-bash">ssh admin@localhost -p 2222
+</code></pre>
+<h3><a id="content-direct-container-access" href="docker-php-caddy-server.html#content-direct-container-access" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Direct Container Access</h3>
+<p>Access the container shell:</p>
+<pre><code class="line-numbers match-braces language-bash">docker exec -it derafu-sites-server-php-caddy bash
+</code></pre>
+<h3><a id="content-restarting-services" href="docker-php-caddy-server.html#content-restarting-services" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Restarting Services</h3>
+<p>Restart Caddy web server:</p>
+<pre><code class="line-numbers match-braces language-bash">docker exec -it derafu-sites-server-php-caddy supervisorctl restart caddy
+</code></pre>
+<h3><a id="content-stopping-the-container" href="docker-php-caddy-server.html#content-stopping-the-container" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Stopping the Container</h3>
+<pre><code class="line-numbers match-braces language-bash">docker-compose down
+</code></pre>
+<h3><a id="content-rebuilding-after-configuration-changes" href="docker-php-caddy-server.html#content-rebuilding-after-configuration-changes" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Rebuilding After Configuration Changes</h3>
+<p>Rebuild for development:</p>
+<pre><code class="line-numbers match-braces language-bash">docker-compose build --no-cache
+docker-compose up -d
+</code></pre>
+<p>Rebuild for production:</p>
+<pre><code class="line-numbers match-braces language-bash">docker-compose -f docker-compose.yml build --no-cache
+docker-compose -f docker-compose.yml up -d
+</code></pre>
+<h2><a id="content-adding-new-sites" href="docker-php-caddy-server.html#content-adding-new-sites" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Adding New Sites</h2>
+<ol>
+<li>
+<p>Create the site directory structure:</p>
+<pre><code class="line-numbers match-braces language-bash">mkdir -p sites/www.newsite.com/public
+touch sites/www.newsite.com/public/index.php
+</code></pre>
+</li>
+<li>
+<p>No server restart required! Caddy automatically detects new sites.</p>
+</li>
+<li>
+<p>For local development, add to your hosts file:</p>
+<pre><code class="line-numbers match-braces">127.0.0.1 www.newsite.com.local
+</code></pre>
+</li>
+</ol>
+<h2><a id="content-environment-variables" href="docker-php-caddy-server.html#content-environment-variables" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Environment Variables</h2>
+<p>Customize behavior through environment variables:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SERVER_NAME</code></td>
+<td>Name for the docker container</td>
+<td>derafu-sites-server</td>
+</tr>
+<tr>
+<td><code>CADDY_DEBUG</code></td>
+<td>Enable debug mode with <code>debug</code></td>
+<td>(empty)</td>
+</tr>
+<tr>
+<td><code>CADDY_EMAIL</code></td>
+<td>Email for Let’s Encrypt</td>
+<td><a href="mailto:admin@example.com">admin@example.com</a></td>
+</tr>
+<tr>
+<td><code>CADDY_HTTPS_ISSUER</code></td>
+<td>TLS issuer (internal, acme)</td>
+<td>internal</td>
+</tr>
+<tr>
+<td><code>CADDY_LOG_SIZE</code></td>
+<td>Log file max size</td>
+<td>100mb</td>
+</tr>
+<tr>
+<td><code>CADDY_LOG_KEEP</code></td>
+<td>Number of log files to keep</td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>CADDY_LOG_KEEP_DAYS</code></td>
+<td>Days to keep logs</td>
+<td>14</td>
+</tr>
+<tr>
+<td><code>WWW_ROOT_PATH</code></td>
+<td>Web root path</td>
+<td>/var/www/sites</td>
+</tr>
+<tr>
+<td><code>WWW_USER</code></td>
+<td>WWW and SSH user in the container</td>
+<td>admin</td>
+</tr>
+<tr>
+<td><code>WWW_GROUP</code></td>
+<td>WWW group in the container</td>
+<td>www-data</td>
+</tr>
+<tr>
+<td><code>HTTP_PORT</code></td>
+<td>HTTP port in host</td>
+<td>8080</td>
+</tr>
+<tr>
+<td><code>HTTPS_PORT</code></td>
+<td>HTTPS port in host</td>
+<td>8443</td>
+</tr>
+<tr>
+<td><code>SSH_PORT</code></td>
+<td>SSH port in host</td>
+<td>2222</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="content-domain-logic" href="docker-php-caddy-server.html#content-domain-logic" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Domain Logic</h2>
+<p>The server handles domains in the following way:</p>
+<ol>
+<li>
+<p><strong>Development domains</strong>: Any domain ending with <code>.local</code> (e.g., <code>www.example.com.local</code>)</p>
+<ul>
+<li>Maps to the same directory as its production counterpart.</li>
+<li>Uses internal self-signed certificates.</li>
+</ul>
+</li>
+<li>
+<p><strong>Production domains</strong>:</p>
+<ul>
+<li>Redirects from non-www to www for second-level domains.</li>
+<li>Automatically obtains and manages Let’s Encrypt certificates (issuer <code>acme</code>).</li>
+</ul>
+</li>
+</ol>
+<h2><a id="content-troubleshooting" href="docker-php-caddy-server.html#content-troubleshooting" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Troubleshooting</h2>
+<h3><a id="content-ssl-certificate-issues" href="docker-php-caddy-server.html#content-ssl-certificate-issues" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>SSL Certificate Issues</h3>
+<p>If you’re having issues with SSL certificates in development:</p>
+<ul>
+<li>Ensure your browser trusts self-signed certificates.</li>
+<li>Try using HTTP instead of HTTPS for local development.</li>
+</ul>
+<h3><a id="content-permissions-issues" href="docker-php-caddy-server.html#content-permissions-issues" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Permissions Issues</h3>
+<p>If you encounter permission issues:</p>
+<pre><code class="line-numbers match-braces language-bash">docker exec -it derafu-sites-server-php-caddy chown -R admin:www-data /var/www/sites
+</code></pre>
+<h3><a id="content-logs-location" href="docker-php-caddy-server.html#content-logs-location" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Logs Location</h3>
+<p>Logs are available in the container and can be accessed with:</p>
+<pre><code class="line-numbers match-braces language-bash">docker exec -it derafu-sites-server-php-caddy cat /var/log/caddy/access.log
+</code></pre>
+<h2><a id="content-advanced-usage" href="docker-php-caddy-server.html#content-advanced-usage" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Advanced Usage</h2>
+<h3><a id="content-custom-caddy-configuration" href="docker-php-caddy-server.html#content-custom-caddy-configuration" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Custom Caddy Configuration</h3>
+<p>For advanced configurations, modify the Caddyfile at <code>config/caddy/Caddyfile</code>.</p>
+<h3><a id="content-using-with-deployer" href="docker-php-caddy-server.html#content-using-with-deployer" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Using with Deployer</h3>
+<p>This container is designed to work with <a rel="nofollow noopener noreferrer" target="_blank" class="external-link" href="https://deployer.org/">Deployer</a> for PHP deployments:</p>
+<ol>
+<li>Set up your <code>deploy.php</code> configuration to connect to the SSH server on port 2222.</li>
+<li>Use the <code>admin</code> user for authentication.</li>
+<li>Set your deployment path to <code>/var/www/sites/www.yoursite.com</code></li>
+</ol>
+<h2><a id="content-contributing" href="docker-php-caddy-server.html#content-contributing" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>Contributing</h2>
+<p>Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.</p>
+<h2><a id="content-license" href="docker-php-caddy-server.html#content-license" class="text-decoration-none small text-muted" aria-hidden="true" title="Permalink"><i class="fa-solid fa-link"></i> </a>License</h2>
+<p>This package is open-sourced software licensed under the <a rel="nofollow noopener noreferrer" target="_blank" class="external-link" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 </div>
-
-</section>
-
-<section id="software">
-    <div class="derafu-block-title mt-4 container" id="block-title--67d83dc7162a2">
-    <div class="derafu-block-title__wrapper text-center derafu-block-title__wrapper--bordered">
-        <h2 class="derafu-block-title__title">
-            Some Free Software Projects
-        </h2>
-                    <p class="derafu-block-title__subtitle">
-                Developing open source tools to simplify and improve software development.
-            </p>
-            </div>
 </div>
-
-
-    <div class="derafu-block-card-grid container" id="block-card-grid--67d83dc716f76">
-    <div class="row g-4">
-                    <div class="col-sm-6 col-lg-3
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/software/derafu-foundation.webp" alt="Derafu Foundation" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">Derafu Foundation</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                A standardized base for creating consistent PHP projects.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://derafu.org/foundation" class="derafu-block-card-grid__button btn " role="button">
-                                See Project
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-                    <div class="col-sm-6 col-lg-3
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/software/derafu-twig.webp" alt="UX Components for Twig" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">UX Components for Twig</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                Twig extension with filters and approximately 40 components for the PHP template system.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://derafu.org/twig" class="derafu-block-card-grid__button btn " role="button">
-                                See Project
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-                    <div class="col-sm-6 col-lg-3
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/software/derafu-form.webp" alt="Forms" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">Forms</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                Declarative, schema-based approach to form definition and rendering.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://derafu.org/form" class="derafu-block-card-grid__button btn " role="button">
-                                See Project
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-                    <div class="col-sm-6 col-lg-3
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/software/derafu-chart.webp" alt="Graphics with GD" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">Graphics with GD</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                PHP library to generate charts with GD or other custom renderers.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://derafu.org/chart" class="derafu-block-card-grid__button btn " role="button">
-                                See Project
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-                    <div class="col-sm-6 col-lg-3
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/software/derafu-query.webp" alt="SQL Query Operators" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">SQL Query Operators</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                Query builder that uses path expressions and configurable operators to simplify complex database queries.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://derafu.org/query" class="derafu-block-card-grid__button btn " role="button">
-                                See Project
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-                    <div class="col-sm-6 col-lg-3
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/software/derafu-data-processor.webp" alt="Data Processing" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">Data Processing</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                Data processing through four phases: casting, transformation, sanitization and validation.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://derafu.org/data-processor" class="derafu-block-card-grid__button btn " role="button">
-                                See Project
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-                    <div class="col-sm-6 col-lg-3
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/software/derafu-selector.webp" alt="Array Selection and Filtering" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">Array Selection and Filtering</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                Querying, extracting, and modifying complex data structures using a declarative selector syntax.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://derafu.org/selector" class="derafu-block-card-grid__button btn " role="button">
-                                See Project
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-                    <div class="col-sm-6 col-lg-3
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/software/derafu-xml.webp" alt="XML Encoding and Validation" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">XML Encoding and Validation</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                XML manipulation, providing robust tools for encoding, decoding, validating, and querying XML documents.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://derafu.org/xml" class="derafu-block-card-grid__button btn " role="button">
-                                See Project
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-            </div>
-</div>
-
-
-    <div class="derafu-block-cta " id="block-cta--67d83dc718df0">
-    <div class="derafu-block-cta__container container">
-        <div class="derafu-block-cta__row row align-items-center">
-                        <div class="col-md-8 derafu-block-cta__content">
-                <h3 class="derafu-block-cta__title">Want to see more free software projects?</h3>
-                <p class="derafu-block-cta__description">Check out the complete list of projects on the upper menu, or <a href='free-software.html' class='link-light text-decoration-none'>learn more about free software</a> and our <a href='docs.html' class='link-light text-decoration-none'>documentation</a>.</p>
-            </div>
-
-                        <div class="col-md-4 derafu-block-cta__action">
-                <a href="javascript:document.querySelector(&#039;.nav-item.dropdown.mega-menu-wrapper .dropdown-toggle&#039;).click();" class="derafu-block-cta__button">
-                    See All Projects
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-</section>
-
-<section id="education">
-    <div class="derafu-block-title mt-4 container" id="block-title--67d83dc719c9d">
-    <div class="derafu-block-title__wrapper text-center derafu-block-title__wrapper--bordered">
-        <h2 class="derafu-block-title__title">
-            Education
-        </h2>
-                    <p class="derafu-block-title__subtitle">
-                Creating innovative tools that make learning more accessible and interactive.
-            </p>
-            </div>
-</div>
-
-
-    <div class="derafu-block-card-grid container" id="block-card-grid--67d83dc719d59">
-    <div class="row g-4">
-                    <div class="col-sm-6 col-lg-4
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/education/flobix.png" alt="Flobix" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">Flobix</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                An educational tool that allows learning through images and symbols.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://www.flobix.org" class="derafu-block-card-grid__button btn " role="button">
-                                Learn More
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-                    <div class="col-sm-6 col-lg-4
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/education/liberalism.png" alt="Responsibility and Freedom" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">Responsibility and Freedom</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                Respect for individual life projects based on the principle of non-aggression.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="index.html" class="derafu-block-card-grid__button btn disabled" role="button">
-                                Learn More
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-                    <div class="col-sm-6 col-lg-4
-                                            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/education/finance.png" alt="Personal Finance" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">Personal Finance</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                Only informative content. No investment recommendations.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="index.html" class="derafu-block-card-grid__button btn disabled" role="button">
-                                Learn More
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-            </div>
-</div>
-
-</section>
-
-<hr/>
-
-<section id="community">
-    <div class="derafu-block-title mt-4 container" id="block-title--67d83dc719e51">
-    <div class="derafu-block-title__wrapper text-center derafu-block-title__wrapper--bordered">
-        <h2 class="derafu-block-title__title">
-            Community Initiatives
-        </h2>
-                    <p class="derafu-block-title__subtitle">
-                Promoting projects that promote collaboration, inclusion and shared knowledge.
-            </p>
-            </div>
-</div>
-
-
-    <div class="derafu-block-card-grid container" id="block-card-grid--67d83dc719ee5">
-    <div class="row g-4">
-                    <div class="col-sm-6 col-lg-4
-                                offset-lg-4            ">
-
-                <div class="derafu-block-card-grid__card">
-                                            <div class="derafu-block-card-grid__image">
-                            <img src="img/home/community/guarida.png" alt="Guarida" class="img-fluid">
-                        </div>
-                    
-                    <div class="derafu-block-card-grid__content">
-                                                    <h3 class="derafu-block-card-grid__title">Guarida</h3>
-                        
-                                                    <div class="derafu-block-card-grid__description">
-                                A space and community of games focused on collectible card games and RPGs.
-                            </div>
-                                            </div>
-
-                                            <div class="derafu-block-card-grid__footer">
-                            <a href="https://www.guarida.cl" class="derafu-block-card-grid__button btn " role="button">
-                                Learn More
-                            </a>
-                        </div>
-                                    </div>
-            </div>
-            </div>
-</div>
-
-</section>
-
-<hr/>
-
-<section id="team">
-    <div class="derafu-block-title mt-4 container" id="block-title--67d83dc719f9b">
-    <div class="derafu-block-title__wrapper text-center derafu-block-title__wrapper--bordered">
-        <h2 class="derafu-block-title__title">
-            Team
-        </h2>
-                    <p class="derafu-block-title__subtitle">
-                Meet the people behind Derafu ORG, committed to open source and education.
-            </p>
-            </div>
-</div>
-
-
-    <div class="derafu-block-team container derafu-block-team--cols-3 derafu-block-team--align-center" id="block-team--67d83dc71a02d">
-    <div class="row g-4">
-                                <div class="col-sm-6 col-lg-4
-                ">
-                <div class="derafu-block-team__member">
-                                        <div class="derafu-block-team__image">
-                        <img src="img/home/team/esteban.png" alt="Esteban" class="img-fluid">
-                    </div>
-
-                                        <div class="derafu-block-team__info">
-                        <h3 class="derafu-block-team__name">Esteban</h3>
-                        <div class="derafu-block-team__role">Software Developer &amp; Entrepreneur</div>
-
-                                                    <div class="derafu-block-team__bio">Passionate about software development, automation and business strategies. With years of experience in creating innovative solutions. Currently pursuing an MBA.</div>
-                        
-                                                    <div class="derafu-block-team__links">
-                                                                    <a href="https://www.linkedin.com/in/estebandelaf" class="derafu-block-team__link btn ">
-                                                                                    <i class="fa-brands fa-linkedin"></i>
-                                                                                <span>LinkedIn</span>
-                                    </a>
-                                                                    <a href="https://github.com/estebandelaf" class="derafu-block-team__link btn ">
-                                                                                    <i class="fa-brands fa-github"></i>
-                                                                                <span>GitHub</span>
-                                    </a>
-                                                            </div>
-                                            </div>
-                </div>
-            </div>
-                                <div class="col-sm-6 col-lg-4
-                ">
-                <div class="derafu-block-team__member">
-                                        <div class="derafu-block-team__image">
-                        <img src="img/home/team/marcela.png" alt="Marcela" class="img-fluid">
-                    </div>
-
-                                        <div class="derafu-block-team__info">
-                        <h3 class="derafu-block-team__name">Marcela</h3>
-                        <div class="derafu-block-team__role">Education &amp; Marketing</div>
-
-                                                    <div class="derafu-block-team__bio">Passionate about education and business management, with training in early childhood education and a diploma in marketing. Currently expanding her skills in programming.</div>
-                        
-                                                    <div class="derafu-block-team__links">
-                                                                    <a href="https://www.linkedin.com/in/marcela-morales-peralta-26054a88" class="derafu-block-team__link btn ">
-                                                                                    <i class="fa-brands fa-linkedin"></i>
-                                                                                <span>LinkedIn</span>
-                                    </a>
-                                                            </div>
-                                            </div>
-                </div>
-            </div>
-                                <div class="col-sm-6 col-lg-4
-                ">
-                <div class="derafu-block-team__member">
-                                        <div class="derafu-block-team__image">
-                        <img src="img/home/team/valentina.png" alt="Valentina" class="img-fluid">
-                    </div>
-
-                                        <div class="derafu-block-team__info">
-                        <h3 class="derafu-block-team__name">Valentina</h3>
-                        <div class="derafu-block-team__role">Kinesiologist &amp; Future Software Developer</div>
-
-                                                    <div class="derafu-block-team__bio">Kinesiologist in transition to the technological world. Passionate about technology, well-being and full consciousness through yoga. Currently completing a programming bootcamp.</div>
-                        
-                                                    <div class="derafu-block-team__links">
-                                                                    <a href="index.html" class="derafu-block-team__link btn disabled">
-                                                                                    <i class="fa-brands fa-linkedin"></i>
-                                                                                <span>LinkedIn</span>
-                                    </a>
-                                                            </div>
-                                            </div>
-                </div>
-            </div>
-            </div>
-</div>
-
-</section>
         </main>
     
             <div id="footer-container"></div>
