@@ -12,9 +12,9 @@ declare(strict_types=1);
 
 namespace Derafu\Org\Controller;
 
+use Derafu\Http\Contract\RequestInterface;
 use Derafu\Renderer\Contract\RendererInterface;
 use Derafu\Routing\Exception\RouteNotFoundException;
-use Derafu\Http\Contract\RequestInterface;
 
 /**
  * Readme controller.
@@ -66,7 +66,7 @@ class ReadmeController
         }
 
         return $this->renderer->render('markdown.html.twig', [
-            'content' => $readmeMd
+            'content' => $readmeMd,
         ]);
     }
 }
