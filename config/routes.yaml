@@ -19,3 +19,51 @@
     derafu_email_class: derafu-email
     derafu_email_user: derafu
     derafu_email_domain: derafu.org
+
+- route: /escpos
+  handler: 'Derafu\Org\Controller\ReadmeController::show'
+  name: escpos
+  parameters:
+    readme: 'escpos'
+
+- route: /vite-plugin-d2
+  handler: 'Derafu\Org\Controller\ReadmeController::show'
+  name: vite-plugin-d2
+  parameters:
+    readme: 'vite-plugin-d2'
+
+- route: /l10n-cl-rut
+  handler: 'Derafu\Org\Controller\ReadmeController::show'
+  name: l10n-cl-rut
+  parameters:
+    readme: 'l10n-cl-rut'
+
+- route: /l10n-cl-enum
+  handler: 'Derafu\Org\Controller\ReadmeController::show'
+  name: l10n-cl-enum
+  parameters:
+    readme: 'l10n-cl-enum'
+
+- route: /enum
+  handler: 'Derafu\Org\Controller\ReadmeController::show'
+  name: enum
+  parameters:
+    readme: 'enum'
+
+- route: /docker-php-caddy-server
+  handler: 'Derafu\Org\Controller\ReadmeController::show'
+  name: docker-php-caddy-server
+  parameters:
+    readme: 'docker-php-caddy-server'
+
+- route: /deployer
+  handler: 'Derafu\Org\Controller\ReadmeController::show'
+  name: deployer
+  parameters:
+    readme: 'deployer'
+
+- route: /github
+  handler: 'Derafu\Org\Controller\ReadmeController::show'
+  name: github
+  parameters:
+    readme: 'github'
